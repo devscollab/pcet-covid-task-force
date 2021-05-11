@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 import { ReactComponent as HelpDeskColorLogo } from "../../assets/help-desk-color.svg";
 import { ReactComponent as VolunteerColorLogo } from "../../assets/volunteer-color.svg";
@@ -7,7 +8,7 @@ import { ReactComponent as ContactUsColorLogo } from "../../assets/contact-us-co
 
 import "./home.styles.scss";
 
-const HomePage = () => (
+const HomePage = ({ history }) => (
     <div className="home-page page">
         <div className="home-page-title">
             PCET's Students have joined to form a Covid Task Force for You
@@ -31,20 +32,29 @@ const HomePage = () => (
         <div className="quick-links-container">
             <div
                 className="quick-link"
-                onClick={() => console.log("Help Desk")}
+                onClick={() => history.push("/help-desk")}
             >
                 <HelpDeskColorLogo className="quick-link-img" />
                 <div className="quick-link-text">Help Desk</div>
             </div>
-            <div className="quick-link">
+            <div
+                className="quick-link"
+                onClick={() => history.push("/volunteer")}
+            >
                 <VolunteerColorLogo className="quick-link-img" />
                 <div className="quick-link-text">Volunteer</div>
             </div>
-            <div className="quick-link">
+            <div
+                className="quick-link"
+                onClick={() => history.push("/what-we-do")}
+            >
                 <WhatWeDoColorLogo className="quick-link-img" />
                 <div className="quick-link-text">What We Do</div>
             </div>
-            <div className="quick-link">
+            <div
+                className="quick-link"
+                onClick={() => history.push("/contact-us")}
+            >
                 <ContactUsColorLogo className="quick-link-img" />
                 <div className="quick-link-text">Contact Us</div>
             </div>
@@ -52,4 +62,4 @@ const HomePage = () => (
     </div>
 );
 
-export default HomePage;
+export default withRouter(HomePage);
