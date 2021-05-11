@@ -1,7 +1,8 @@
 .help-desk-page {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    overflow-y: scroll;
 
     &-title {
         font-size: 1.5em;
