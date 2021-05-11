@@ -37,28 +37,30 @@ const HomePage = ({ history }) => (
                 onClick={() => history.push("/help-desk")}
             >
                 <HelpDeskColorLogo className="quick-link-img" />
-                <div className="quick-link-text">Help Desk</div>
+                <div className="quick-link-text">
+                    Need help? Go to Help Desk
+                </div>
             </div>
             <div
                 className="quick-link"
                 onClick={() => history.push("/volunteer")}
             >
                 <VolunteerColorLogo className="quick-link-img" />
-                <div className="quick-link-text">Volunteer</div>
+                <div className="quick-link-text">Help us by Volunteering</div>
             </div>
             <div
                 className="quick-link"
                 onClick={() => history.push("/what-we-do")}
             >
                 <WhatWeDoColorLogo className="quick-link-img" />
-                <div className="quick-link-text">What We Do</div>
+                <div className="quick-link-text">Understand What We Do</div>
             </div>
             <div
                 className="quick-link"
                 onClick={() => history.push("/contact-us")}
             >
                 <ContactUsColorLogo className="quick-link-img" />
-                <div className="quick-link-text">Contact Us</div>
+                <div className="quick-link-text">Contact Us Anytime</div>
             </div>
         </div>
     </div>
