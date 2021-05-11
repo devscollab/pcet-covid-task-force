@@ -3,7 +3,8 @@ import HelpDeskCard from "../../components/helpdeskcard/help-desk-card.component
 import { Container, Row } from "react-bootstrap";
 
 import "./help-desk.styles.scss";
-const DSCLead = [
+
+const helpDeskData = [
     {
         title: "Central Helpdesk",
         desc: "Hello world",
@@ -77,7 +78,7 @@ const HelpDeskPage = () => (
         </div>
         <Container fluid>
             <Row>
-                {DSCLead.map((member, index) => (
+                {helpDeskData.map((member, index) => (
                     <div className="col-md-3" key={index}>
                         <HelpDeskCard
                             title={member.title}
