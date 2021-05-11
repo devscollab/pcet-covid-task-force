@@ -1,0 +1,67 @@
+/* #272929 #018361 #24C59B #ffffff */
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0%;
+    margin: 0%;
+
+    background-color: #272929;
+    color: #ffffff;
+}
+
+.main-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.header {
+    height: 12vh;
+}
+
+.sidebar {
+    width: 5vw;
+}
+
+.page {
+    background-color: #ffffff;
+    color: #000000;
+    width: 95vw;
+    height: 88vh;
+
+    border-radius: 15px 0 0 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #272929;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #018361;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #24c59b;
+}
+
+@media screen and (max-width: 900px) {
+    .sidebar {
+        display: none;
+    }
+
+    .page {
+        background-color: #ffffff;
+        color: #000000;
+        width: 100vw;
+        height: 88vh;
+
+        border-radius: 5px 5px 0 0;
+    }
+}
