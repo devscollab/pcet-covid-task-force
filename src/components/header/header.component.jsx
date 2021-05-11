@@ -1,12 +1,13 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 import "./header.styles.scss";
 
-const Header = () => (
+const Header = ({ history }) => (
     <div className="header">
-        <div className="header-left">
+        <div className="header-left" onClick={() => history.push("/")}>
             <Logo className="logo" />
             <span className="header-title">PCET Covid Task Force</span>
         </div>
@@ -19,4 +20,4 @@ const Header = () => (
     </div>
 );
 
-export default Header;
+export default withRouter(Header);

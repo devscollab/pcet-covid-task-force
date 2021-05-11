@@ -16,6 +16,10 @@ $small: 900px;
         justify-content: center;
         align-items: center;
 
+        &:hover {
+            cursor: pointer;
+        }
+
         .logo {
             height: 54px;
             width: 54px;
