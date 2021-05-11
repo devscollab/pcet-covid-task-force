@@ -46,7 +46,8 @@ $small: 900px;
         margin: 4em 0 0 0;
 
         @media screen and (max-width: $small) {
-            display: none;
+            // display: none;
+            margin: 2em 0;
         }
 
         .quick-link {
@@ -70,7 +71,7 @@ $small: 900px;
             &-text {
                 text-align: center;
                 font-size: 1.2em;
-                margin: 1em 0;
+                margin: 1em 0 2em 0;
             }
         }
     }
