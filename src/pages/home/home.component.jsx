@@ -6,6 +6,8 @@ import { ReactComponent as VolunteerColorLogo } from "../../assets/volunteer-col
 import { ReactComponent as WhatWeDoColorLogo } from "../../assets/what-we-do-color.svg";
 import { ReactComponent as ContactUsColorLogo } from "../../assets/contact-us-color.svg";
 
+import Banner from "../../assets/banner.png";
+
 import "./home.styles.scss";
 
 const HomePage = ({ history }) => (
@@ -15,18 +17,18 @@ const HomePage = ({ history }) => (
         </div>
         <div className="home-page-img-txt-capsule">
             <div className="home-page-img-txt-capsule-img">
-                <img src="https://picsum.photos/300/150" alt="Home Page" />
+                <img src={Banner} alt="Home Page" />
             </div>
             <div className="home-page-img-txt-capsule-description">
                 Hope you and your family members are safe in this pandemic
-                situation. We have observed that few of our students, alumni,
-                and their immediate family members need some medical or other
-                related help. To help our students, alumni, and their immediate
-                family members, we have created PCET STUDENTS COVID TASK FORCE,
-                which will try to help the concerned people. Some tasks may be
-                like Lab Testing, Hospital admission, Oxygen bed, Ventilator,
-                Plasma, medicines, moral support, arranging Isolation Beds,
-                medical suggestions from Doctors, etc.
+                situation. <br /> We have observed that few of our students,
+                alumni, and their immediate family members need some medical or
+                other related help. To help our students, alumni, and their
+                immediate family members, we have created PCET STUDENTS COVID
+                TASK FORCE, which will try to help the concerned people. We try
+                to provide help in areas like Lab Testing, Hospital admission,
+                Oxygen bed, Ventilator, Plasma, Medicines, Moral Support,
+                Arranging Isolation Beds, Medical suggestions from Doctors, etc.
             </div>
         </div>
         <div className="quick-links-container">
