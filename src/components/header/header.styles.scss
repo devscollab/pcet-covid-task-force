@@ -1,0 +1,65 @@
+$small: 900px;
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: "logoArea centreArea userInfoArea";
+
+    @media screen and (max-width: $small) {
+        grid-template-columns: 1fr 1fr 3fr;
+    }
+
+    &-left {
+        grid-area: logoArea;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .logo {
+            height: 54px;
+            width: 54px;
+            margin: 1em;
+        }
+
+        .header-title {
+            font-size: 1.5em;
+
+            @media screen and (max-width: $small) {
+                display: none;
+            }
+        }
+    }
+
+    &-right {
+        grid-area: userInfoArea;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .user-name {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .user-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin: 1em;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            img {
+                height: 54px;
+                width: 54px;
+                border-radius: 27px;
+            }
+        }
+    }
+}
