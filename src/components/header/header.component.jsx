@@ -15,7 +15,7 @@ const headerArray = [
 
 const userName = "John Doe";
 
-const Header = ({ history }) => (
+const Header = ({ isAuthenticated, authenticate, history }) => (
     <div className="header">
         <div className="header-left" onClick={() => history.push("/")}>
             <Logo className="logo" />
@@ -24,13 +24,43 @@ const Header = ({ history }) => (
         <div className="header-center">
             <HeaderTips array={headerArray} />
         </div>
-        <div className="header-right">
-            <span className="user-name">{userName} &#9660;</span>
-            <div className="user-img">
-                <img src="https://picsum.photos/id/1005/54" alt="Display" />
+        {isAuthenticated ? (
+            <div className="header-right">
+                <span
+                    className="user-name"
+                    onClick={() => {
+                        localStorage.removeItem("token");
+                        authenticate();
+                    }}
+                >
+                    {userName} &#9660;
+                </span>
+                <div className="user-img">
+                    <img src="https://picsum.photos/id/1005/54" alt="Display" />
+                </div>
+                <span className="user-after-img">&#9660;</span>
             </div>
-            <span className="user-after-img">&#9660;</span>
-        </div>
+        ) : (
+            <div className="header-right">
+                <span className="log-in-register-call-to-action">
+                    <span
+                        onClick={() => {
+                            history.push("/login");
+                        }}
+                    >
+                        Log In /
+                    </span>
+                    <span
+                        onClick={() => {
+                            history.push("/register");
+                        }}
+                    >
+                        {" "}
+                        Register
+                    </span>
+                </span>
+            </div>
+        )}
     </div>
 );
 
