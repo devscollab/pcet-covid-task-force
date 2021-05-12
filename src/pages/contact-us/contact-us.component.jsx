@@ -41,8 +41,8 @@ const ContactUsPage = () => (
     <div className="contact-us-page page">
         <div className="contact-us-page-title">Contact Us</div>
         <div className="contact-us-page-data">
-            {data.map(d=>(
-            <div>
+            {data.map((d,index)=>(
+            <div key={index}>
             <p className="title">{d.title}</p>
             <div className="contact-us-card">
             <div className="contact-us-card-img">
