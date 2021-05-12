@@ -39,7 +39,7 @@ class App extends React.Component {
                         <Route path="/contact-us" component={ContactUsPage} />
                     </Switch>
                 </div>
-                <BottomBar />
+                <BottomBar className="bottombar" />
             </div>
         );
     }

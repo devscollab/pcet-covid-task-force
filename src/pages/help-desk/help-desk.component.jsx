@@ -1,6 +1,6 @@
 import React from "react";
 import HelpDeskCard from "../../components/helpdeskcard/help-desk-card.component";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 
 import { helpDeskData } from "./data";
 
@@ -28,9 +28,9 @@ class HelpDeskPage extends React.Component {
                 <Container fluid>
                     <Row>
                         {categories.map((member, index) => (
-                            <div className="col-md-3" key={index}>
+                            <Col xs={12} sm={6} lg={4} xl={3} key={index}>
                                 <HelpDeskCard {...member} />
-                            </div>
+                            </Col>
                         ))}
                     </Row>
                 </Container>

@@ -3,8 +3,7 @@ import { Button, Card } from "react-bootstrap";
 
 function HelpDeskCard(props) {
     return (
-        <div>
-            <Card style={{ margin: "20px 10px 10px 10px" }}>
+            <Card style={{ margin: "20px 10px 10px 10px", height:"95%", paddingBottom:"25px" }}>
                 <Card.Img
                     style={{ height: "170px" }}
                     variant="top"
@@ -13,12 +12,11 @@ function HelpDeskCard(props) {
                 <Card.Body>
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text>{props.desc}</Card.Text>
-                    <Button style={{ backgroundColor: "#018361" }}>
+                    <Button style={{ backgroundColor: "#018361", bottom:'4%',position: "absolute" }}>
                         {props.button}
                     </Button>
                 </Card.Body>
             </Card>
-        </div>
     );
 }
 
