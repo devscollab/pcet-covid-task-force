@@ -6,7 +6,7 @@ import { ReactComponent as LoginImage } from "../../assets/login-image.svg";
 import CustomInput from "../../components/custom-input/custom-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 
-import req from "../../helpers/requests";
+import Requests from "../../helpers/requests";
 
 import "./login.styles.scss";
 
@@ -26,7 +26,7 @@ class LoginPage extends React.Component {
 
         const { email, password } = this.state;
 
-        req.login(email, password)
+        Requests.login(email, password)
             .then((res) => {
                 if (res.data.status === 200) {
                     // logged in successfully
