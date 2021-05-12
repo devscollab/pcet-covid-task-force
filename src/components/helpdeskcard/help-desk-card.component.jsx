@@ -14,7 +14,7 @@ function HelpDeskCard(props) {
                     <Card.Title>{props.title}</Card.Title>
                     <Card.Text>{props.desc}</Card.Text>
                     <Button style={{ backgroundColor: "#018361" }}>
-                        Ask for help
+                        {props.button}
                     </Button>
                 </Card.Body>
             </Card>
