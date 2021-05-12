@@ -66,4 +66,13 @@ $small: 900px;
             }
         }
     }
+
+    &-center {
+        grid-area: centreArea;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
 }
