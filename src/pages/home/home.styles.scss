@@ -9,6 +9,7 @@ $small: 900px;
     &-title {
         font-size: 1.5em;
         margin: 1em;
+        line-height: 1.2em;
     }
 
     &-img-txt-capsule {
@@ -24,6 +25,10 @@ $small: 900px;
 
         &-img {
             margin: 0 1em;
+
+            img {
+                width: 250px;
+            }
         }
 
         &-description {
@@ -71,7 +76,7 @@ $small: 900px;
             &-text {
                 text-align: center;
                 font-size: 1.2em;
-                margin: 1em 0 2em 0;
+                margin: 1em;
             }
         }
     }

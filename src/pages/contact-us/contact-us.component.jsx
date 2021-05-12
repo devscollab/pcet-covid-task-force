@@ -71,7 +71,10 @@ const ContactUsPage = () => (
                                     <CallLogo
                                         className="logo"
                                         onClick={() => {
-                                            window.open(`tel:+91${d.contact1}`);
+                                            window.open(
+                                                `tel:+91${d.contact1}`,
+                                                "_self"
+                                            );
                                         }}
                                     />
                                 </div>
@@ -99,7 +102,10 @@ const ContactUsPage = () => (
                                     <CallLogo
                                         className="logo"
                                         onClick={() => {
-                                            window.open(`tel:+91${d.contact2}`);
+                                            window.open(
+                                                `tel:+91${d.contact2}`,
+                                                "_self"
+                                            );
                                         }}
                                     />
                                 </div>

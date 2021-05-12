@@ -69,10 +69,7 @@ body {
 
         border-radius: 5px 5px 0 0;
     }
-    .bottombar{
+    .bottombar {
         height: 8vh;
-    }
-    .main-container{
-        height: 76vh;
     }
 }
