@@ -9,6 +9,7 @@ import ContactUsPage from "./pages/contact-us/contact-us.component";
 
 import Header from "./components/header/header.component";
 import Sidebar from "./components/sidebar/sidebar.component";
+import BottomBar from "./components/bottom-bar/bottom-bar.component";
 
 import "./App.css";
 
@@ -38,6 +39,7 @@ class App extends React.Component {
                         <Route path="/contact-us" component={ContactUsPage} />
                     </Switch>
                 </div>
+                <BottomBar />
             </div>
         );
     }

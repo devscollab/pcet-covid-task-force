@@ -1,0 +1,20 @@
+.fade-in {
+    transition: opacity 1s ease;
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.fader {
+    color: #ffffff;
+    font-size: 1em;
+    opacity: 0.5;
+    // font-family: cursive;
+}
+
+@media screen and (max-width: 900px) {
+    .fader {
+        font-size: 2vmax;
+    }
+}
