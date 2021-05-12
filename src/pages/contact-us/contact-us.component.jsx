@@ -1,6 +1,7 @@
 import React from "react";
-
 import "./contact-us.styles.scss";
+import { ReactComponent as WhatsappLogo } from "../../assets/whatsapp.svg";
+import { ReactComponent as CallLogo } from "../../assets/call.svg";
 
 const data = [
     {
@@ -49,13 +50,25 @@ const ContactUsPage = () => (
                         </div>
                         <div className="contact-us-card-data">
                             <div className="contact-us-card-data-d1">
-                                <p>{d.name1}</p>
-                                <p>{d.contact1}</p>
+                                    <div className="info">
+                                        <p>{d.name1}</p>
+                                        <p>{d.contact1}</p>
+                                    </div>
+                                    <div className="logo-box">
+                                        <WhatsappLogo className="logo" onClick={()=>{ window.open(`https://wa.me/91${d.contact1}`, "_blank")}}/>
+                                        <CallLogo className="logo"/>
+                                    </div>
                             </div>
                             <div className="line"></div>
                             <div className="contact-us-card-data-d1">
-                                <p>{d.name2}</p>
-                                <p>{d.contact2}</p>
+                                <div className="info">
+                                    <p>{d.name2}</p>
+                                    <p>{d.contact2}</p>
+                                </div>
+                                <div className="logo-box">
+                                    <WhatsappLogo className="logo" onClick={()=>{ window.open(`https://wa.me/91${d.contact2}`, "_blank")}}/>
+                                    <CallLogo className="logo"/>
+                                </div>
                             </div>
                         </div>
                     </div>
