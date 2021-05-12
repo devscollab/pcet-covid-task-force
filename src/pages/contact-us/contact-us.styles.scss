@@ -1,10 +1,86 @@
+$small: 900px;
+
+
 .contact-us-page {
     display: flex;
     flex-direction: column;
-    align-items: center;
-
+    //align-items: center;
+    overflow-y:scroll;
     &-title {
         font-size: 1.5em;
-        margin: 1em;
+        margin: 1em 2em;
+        float: left;
+    }
+
+    &-data{
+
+        margin:0 2em;
+        .title{
+            font-size: 1.3em;
+            margin-bottom: 0.5em;
+            margin-top: 1.5em;
+        }
+        .contact-us-card {
+            display: flex;
+            //margin: 0 1.5em;
+            &-img {
+                margin:0 1em;
+
+                img {
+                    height: 80px;
+                    width: 80px;
+                }
+            }
+            &-data{
+                display: flex;
+                &-d1{
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                    margin:10px;
+                    padding:0 10px;
+                    border: 1px black solid;
+                    width:200px;
+                    height: 60px;
+                    font-size: 1.2em;
+                    background-color: #018361;
+                    color: white;
+                    p{
+                        padding: 0;
+                        margin: 0;
+                    }    
+
+                    @media screen and (max-width: $small){
+                          // try1
+                          width: 350px;
+                          //try1
+                    }
+                }
+
+                .line{
+                    margin:0 4em;
+                    margin-top: 1em;
+                    border-left: 3px black solid;
+                    height:65px;
+                    transform: rotate(20deg);
+     
+                    @media screen and (max-width: $small) {
+                     display: none;
+                    }
+                }
+                @media screen and (max-width: $small) {
+                    flex-direction: column;
+                    align-items: center; // try1
+                }
+            }
+
+            // try1
+            @media screen and (max-width: $small) {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            // tyr1
+        }
     }
 }
