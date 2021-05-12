@@ -6,15 +6,14 @@
     transition: opacity 1s ease;
 }
 
-.fader{
-    color: #018361;
-    font-size: 1.5vmax;
-    font-family: cursive;   
+.fader {
+    color: #ffffff;
+    font-size: 0.8em;
+    // font-family: cursive;
 }
 
-
 @media screen and (max-width: 900px) {
-    .fader{
-        font-size: 2vmax;   
+    .fader {
+        font-size: 2vmax;
     }
 }

@@ -7,9 +7,9 @@ import { ReactComponent as VolunteerLogo } from "../../assets/volunteer.svg";
 import { ReactComponent as WhatWeDoLogo } from "../../assets/what-we-do.svg";
 import { ReactComponent as ContactUsLogo } from "../../assets/contact-us.svg";
 
-import "./bottombar.styles.scss";
+import "./bottom-bar.styles.scss";
 
-const Bottombar = ({ location, history }) => {
+const BottomBar = ({ location, history }) => {
     let activatedItemString = location.pathname.substring(1);
     let res = activatedItemString.indexOf("/");
 
@@ -30,47 +30,37 @@ const Bottombar = ({ location, history }) => {
     return (
         <div className="bottombar">
             <div
-                className={`${
-                    activatedItem === 1 ? "activated" : ""
-                } `}
+                className={`${activatedItem === 1 ? "activated" : ""} `}
                 onClick={() => history.push("/")}
             >
                 <HomeLogo className="logo" />
             </div>
             <div
-                className={`${
-                    activatedItem === 2 ? "activated" : ""
-                } `}
+                className={`${activatedItem === 2 ? "activated" : ""} `}
                 onClick={() => history.push("/help-desk")}
             >
                 <HelpDeskLogo className="logo" />
             </div>
             <div
-                className={`${
-                    activatedItem === 3 ? "activated" : ""
-                } `}
+                className={`${activatedItem === 3 ? "activated" : ""} `}
                 onClick={() => history.push("/volunteer")}
             >
                 <VolunteerLogo className="logo" />
             </div>
             <div
-                className={`${
-                    activatedItem === 4 ? "activated" : ""
-                } `}
+                className={`${activatedItem === 4 ? "activated" : ""} `}
                 onClick={() => history.push("/what-we-do")}
             >
                 <WhatWeDoLogo className="logo" />
             </div>
             <div
-                className={`${
-                    activatedItem === 5 ? "activated" : ""
-                } `}
+                className={`${activatedItem === 5 ? "activated" : ""} `}
                 onClick={() => history.push("/contact-us")}
             >
                 <ContactUsLogo className="logo" />
             </div>
         </div>
-            );
+    );
 };
 
-export default withRouter(Bottombar);
+export default withRouter(BottomBar);
