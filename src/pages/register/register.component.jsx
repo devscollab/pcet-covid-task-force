@@ -4,7 +4,7 @@ import { withRouter } from "react-router-dom";
 import CustomInput from "../../components/custom-input/custom-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
 
-import req from "../../helpers/requests";
+import Requests from "../../helpers/requests";
 
 import "./register.styles.scss";
 
@@ -31,7 +31,7 @@ class RegisterPage extends React.Component {
 
         const { email, password } = this.state;
 
-        req.login(email, password)
+        Requests.login(email, password)
             .then((res) => {
                 if (res.data.status === 200) {
                     // logged in successfully
