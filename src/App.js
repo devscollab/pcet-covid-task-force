@@ -6,6 +6,8 @@ import HelpDeskPage from "./pages/help-desk/help-desk.component";
 import VolunteerPage from "./pages/volunteer/volunteer.component";
 import WhatWeDoPage from "./pages/what-we-do/what-we-do.component";
 import ContactUsPage from "./pages/contact-us/contact-us.component";
+import LoginPage from "./pages/login/login.component";
+import RegisterPage from "./pages/register/register.component";
 
 import Header from "./components/header/header.component";
 import Sidebar from "./components/sidebar/sidebar.component";
@@ -19,27 +21,51 @@ class App extends React.Component {
 
         this.state = {
             activatedItem: 1,
+            isAuthenticated: false,
         };
+    }
+
+    authenticate() {
+        let token = localStorage.getItem("token");
+        if (token !== null) {
+            this.setState({ isAuthenticated: true });
+        } else {
+            this.setState({ isAuthenticated: false });
+        }
+    }
+
+    componentDidMount() {
+        this.authenticate();
     }
 
     render() {
         return (
             <div>
-                <Header className="header" />
+                <Header
+                    className="header"
+                    isAuthenticated={this.state.isAuthenticated}
+                    authenticate={this.authenticate.bind(this)}
+                />
                 <div className="main-container">
                     <Sidebar
                         className="sidebar"
                         activatedItem={this.state.activatedItem}
                     />
                     <Switch>
-                        <Route exact path="/" component={HomePage} />
                         <Route path="/help-desk" component={HelpDeskPage} />
                         <Route path="/volunteer" component={VolunteerPage} />
                         <Route path="/what-we-do" component={WhatWeDoPage} />
                         <Route path="/contact-us" component={ContactUsPage} />
+                        <Route path="/login">
+                            <LoginPage
+                                authenticate={this.authenticate.bind(this)}
+                            />
+                        </Route>
+                        <Route path="/register" component={RegisterPage} />
+                        <Route path="/" component={HomePage} />
                     </Switch>
                 </div>
-                <BottomBar className="bottombar" />
+                <BottomBar className="bottom-bar" />
             </div>
         );
     }

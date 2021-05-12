@@ -1,10 +1,11 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
-import './help-desk-card.style.scss';
+
+import "./help-desk-card.style.scss";
 
 function HelpDeskCard(props) {
     return (
-        <Card  className="helpercard" >
+        <Card className="helpercard">
             <Card.Img
                 style={{ height: "170px" }}
                 variant="top"
@@ -13,9 +14,7 @@ function HelpDeskCard(props) {
             <Card.Body>
                 <Card.Title>{props.title}</Card.Title>
                 <Card.Text>{props.desc}</Card.Text>
-                <Button className="helpercard-button">
-                    {props.button}
-                </Button>
+                <Button className="helpercard-button">{props.button}</Button>
             </Card.Body>
         </Card>
     );

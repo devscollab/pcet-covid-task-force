@@ -50,24 +50,64 @@ const ContactUsPage = () => (
                         </div>
                         <div className="contact-us-card-data">
                             <div className="contact-us-card-data-d1">
-                                    <div className="info">
-                                        <p>{d.name1}</p>
-                                        <p>{d.contact1}</p>
-                                    </div>
-                                    <div className="logo-box">
-                                        <WhatsappLogo className="logo" onClick={()=>{ window.open(`https://wa.me/91${d.contact1}`, "_blank")}}/>
-                                        <CallLogo className="logo"/>
-                                    </div>
+                                <div className="info">
+                                    <p>{d.name1}</p>
+                                    <p>
+                                        <a href={`tel:+91${d.contact1}`}>
+                                            {d.contact1}
+                                        </a>
+                                    </p>
+                                </div>
+                                <div className="logo-box">
+                                    <WhatsappLogo
+                                        className="logo"
+                                        onClick={() => {
+                                            window.open(
+                                                `https://wa.me/91${d.contact1}`,
+                                                "_blank"
+                                            );
+                                        }}
+                                    />
+                                    <CallLogo
+                                        className="logo"
+                                        onClick={() => {
+                                            window.open(
+                                                `tel:+91${d.contact1}`,
+                                                "_self"
+                                            );
+                                        }}
+                                    />
+                                </div>
                             </div>
                             <div className="line"></div>
                             <div className="contact-us-card-data-d1">
                                 <div className="info">
                                     <p>{d.name2}</p>
-                                    <p>{d.contact2}</p>
+                                    <p>
+                                        <a href={`tel:+91${d.contact2}`}>
+                                            {d.contact2}
+                                        </a>
+                                    </p>
                                 </div>
                                 <div className="logo-box">
-                                    <WhatsappLogo className="logo" onClick={()=>{ window.open(`https://wa.me/91${d.contact2}`, "_blank")}}/>
-                                    <CallLogo className="logo"/>
+                                    <WhatsappLogo
+                                        className="logo"
+                                        onClick={() => {
+                                            window.open(
+                                                `https://wa.me/91${d.contact2}`,
+                                                "_blank"
+                                            );
+                                        }}
+                                    />
+                                    <CallLogo
+                                        className="logo"
+                                        onClick={() => {
+                                            window.open(
+                                                `tel:+91${d.contact2}`,
+                                                "_self"
+                                            );
+                                        }}
+                                    />
                                 </div>
                             </div>
                         </div>

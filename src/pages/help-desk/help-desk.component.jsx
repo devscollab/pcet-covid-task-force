@@ -28,7 +28,14 @@ class HelpDeskPage extends React.Component {
                 <Container fluid>
                     <Row>
                         {categories.map((member, index) => (
-                            <Col xs={12} sm={6} lg={4} xl={3} key={index} className="cardCol">
+                            <Col
+                                xs={12}
+                                sm={6}
+                                lg={4}
+                                xl={3}
+                                key={index}
+                                className="cardCol"
+                            >
                                 <HelpDeskCard {...member} />
                             </Col>
                         ))}

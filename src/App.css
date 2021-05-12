@@ -57,6 +57,11 @@ body {
 }
 
 @media screen and (max-width: 900px) {
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
     .sidebar {
         display: none;
     }
@@ -65,14 +70,11 @@ body {
         background-color: #ffffff;
         color: #000000;
         width: 100vw;
-        height: 88vh;
+        height: 80vh;
 
         border-radius: 5px 5px 0 0;
     }
-    .bottombar{
+    .bottom-bar {
         height: 8vh;
-    }
-    .main-container{
-        height: 76vh;
     }
 }
