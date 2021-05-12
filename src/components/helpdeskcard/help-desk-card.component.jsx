@@ -1,22 +1,23 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
+import './help-desk-card.style.scss';
 
 function HelpDeskCard(props) {
     return (
-            <Card style={{ margin: "20px 10px 10px 10px", height:"95%", paddingBottom:"25px" }}>
-                <Card.Img
-                    style={{ height: "170px" }}
-                    variant="top"
-                    src={props.img}
-                />
-                <Card.Body>
-                    <Card.Title>{props.title}</Card.Title>
-                    <Card.Text>{props.desc}</Card.Text>
-                    <Button style={{ backgroundColor: "#018361", bottom:'4%',position: "absolute" }}>
-                        {props.button}
-                    </Button>
-                </Card.Body>
-            </Card>
+        <Card  className="helpercard" >
+            <Card.Img
+                style={{ height: "170px" }}
+                variant="top"
+                src={props.img}
+            />
+            <Card.Body>
+                <Card.Title>{props.title}</Card.Title>
+                <Card.Text>{props.desc}</Card.Text>
+                <Button className="helpercard-button">
+                    {props.button}
+                </Button>
+            </Card.Body>
+        </Card>
     );
 }
 
