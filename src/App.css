@@ -57,6 +57,11 @@ body {
 }
 
 @media screen and (max-width: 900px) {
+    /* width */
+    ::-webkit-scrollbar {
+        width: 5px;
+    }
+
     .sidebar {
         display: none;
     }

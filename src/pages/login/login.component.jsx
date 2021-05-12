@@ -58,6 +58,7 @@ class LoginPage extends React.Component {
                 </div>
                 <form className="log-in-page-form" onSubmit={this.handleSubmit}>
                     <div className="log-in-page-form-title">LOGIN</div>
+                    <div className="error-message">{this.state.err}</div>
                     <CustomInput
                         customStyle={{ width: "300px" }}
                         type="email"
@@ -87,7 +88,6 @@ class LoginPage extends React.Component {
                         Forgot your password? Click{" "}
                         <span className="click-here">here</span>
                     </div>
-                    <div className="error-message">{this.state.err}</div>
                     <div
                         className="register-link"
                         onClick={() => this.props.history.push("/register")}

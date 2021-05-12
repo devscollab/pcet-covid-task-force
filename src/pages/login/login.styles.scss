@@ -21,8 +21,8 @@ $small: 900px;
 
         svg {
             @media screen and (max-width: $small) {
-                width: 200px;
-                height: 200px;
+                width: 150px;
+                height: 150px;
             }
         }
     }
@@ -41,15 +41,20 @@ $small: 900px;
         &-title {
             font-size: 2em;
             margin: 2em 0 1em 0;
+
+            @media screen and (max-width: $small) {
+                font-size: 1.5em;
+                margin: 1em 0 1em 0;
+            }
         }
 
         .error-message {
-            margin-bottom: 1em;
             color: red;
         }
 
         .forgot-password {
             font-size: 0.8em;
+            margin-bottom: 1.5em;
 
             .click-here {
                 text-decoration: underline;
@@ -62,6 +67,7 @@ $small: 900px;
 
         .register-link {
             font-size: 1.2em;
+            margin-bottom: 1em;
 
             &:hover {
                 cursor: pointer;
