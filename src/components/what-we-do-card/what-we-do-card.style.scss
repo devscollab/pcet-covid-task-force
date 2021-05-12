@@ -1,0 +1,46 @@
+.whatwedocard{
+    margin: 20px 10px 10px 10px ;
+    height: 90% ;
+    border-radius: 12px;
+
+    &-button{
+        background-color: #018361; 
+        bottom: 5%;
+        position: absolute 
+    }
+    &-imgcol{
+        display: flex;
+        justify-content: center;
+    }
+    &-row{
+        height: 100%;
+        border: 2px solid #00000011;
+        margin : 1px;
+        border-radius: 12px;
+    }
+    &-cardb{
+        padding-bottom: 40px;
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    .whatwedocard{
+        margin: 0 ;
+        height: 95% ;
+    
+        &-button{
+            bottom: auto;
+            position: relative 
+        }
+        &-imgcol{
+            margin: 0;
+        }
+    
+    }
+
+    
+    .cardCol{
+        padding: 0;
+    }
+}

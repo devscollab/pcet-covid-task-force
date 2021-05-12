@@ -12,6 +12,7 @@ body {
 .main-container {
     display: flex;
     align-items: flex-start;
+    height: 88vh;
 }
 
 .header {
@@ -67,5 +68,11 @@ body {
         height: 80vh;
 
         border-radius: 5px 5px 0 0;
+    }
+    .bottombar{
+        height: 8vh;
+    }
+    .main-container{
+        height: 76vh;
     }
 }
