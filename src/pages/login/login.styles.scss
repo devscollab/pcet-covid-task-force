@@ -1,12 +1,30 @@
+$small: 900px;
+
 .log-in-page {
     display: flex;
     flex-direction: row;
+    overflow-y: auto;
+
+    @media screen and (max-width: $small) {
+        flex-direction: column;
+    }
 
     &-img {
         width: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media screen and (max-width: $small) {
+            width: 100%;
+        }
+
+        svg {
+            @media screen and (max-width: $small) {
+                width: 200px;
+                height: 200px;
+            }
+        }
     }
 
     &-form {
@@ -16,13 +34,39 @@
         justify-content: flex-start;
         align-items: center;
 
+        @media screen and (max-width: $small) {
+            width: 100%;
+        }
+
         &-title {
             font-size: 2em;
             margin: 2em 0 1em 0;
         }
 
         .error-message {
+            margin-bottom: 1em;
             color: red;
+        }
+
+        .forgot-password {
+            font-size: 0.8em;
+
+            .click-here {
+                text-decoration: underline;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .register-link {
+            font-size: 1.2em;
+
+            &:hover {
+                cursor: pointer;
+                text-decoration: underline;
+            }
         }
     }
 }

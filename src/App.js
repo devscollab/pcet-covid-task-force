@@ -65,7 +65,7 @@ class App extends React.Component {
                         <Route path="/" component={HomePage} />
                     </Switch>
                 </div>
-                <BottomBar className="bottombar" />
+                <BottomBar className="bottom-bar" />
             </div>
         );
     }

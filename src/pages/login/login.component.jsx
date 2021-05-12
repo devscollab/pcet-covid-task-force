@@ -26,7 +26,7 @@ class LoginPage extends React.Component {
 
         const { email, password } = this.state;
 
-        req.loginStudent(email, password)
+        req.login(email, password)
             .then((res) => {
                 if (res.data.status === 200) {
                     // logged in successfully
@@ -79,11 +79,22 @@ class LoginPage extends React.Component {
 
                     <CustomButton
                         type="submit"
-                        customStyle={{ width: "300px" }}
+                        customStyle={{ width: "300px", marginBottom: "0.25em" }}
                     >
                         Submit
                     </CustomButton>
+                    <div className="forgot-password">
+                        Forgot your password? Click{" "}
+                        <span className="click-here">here</span>
+                    </div>
                     <div className="error-message">{this.state.err}</div>
+                    <div
+                        className="register-link"
+                        onClick={() => this.props.history.push("/register")}
+                    >
+                        Create a new account / Register{" "}
+                        <span style={{ fontSize: "1.5em" }}>&#x21A6;</span>
+                    </div>
                 </form>
             </div>
         );
