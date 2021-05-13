@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 class Requests {
-    constructor(route = "https://pctfapi.azurewebsites.net/") {
+    constructor(route = "https://pctfapi.azurewebsites.net") {
         this.route = route;
     }
 
@@ -33,4 +33,4 @@ class Requests {
     }
 }
 
-module.exports = new Requests();
+export default new Requests();
