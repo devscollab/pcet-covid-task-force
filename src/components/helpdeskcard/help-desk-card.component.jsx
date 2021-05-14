@@ -6,8 +6,8 @@ import "./help-desk-card.style.scss";
 function HelpDeskCard(props) {
     return (
         <Card className="helpercard">
-            <Card.Img
-                style={{ height: "170px" }}
+            <Card.Img className="helperimg"
+                style={{ height: "200px" }}
                 variant="top"
                 src={props.img}
             />
