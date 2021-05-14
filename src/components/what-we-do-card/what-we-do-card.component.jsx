@@ -7,7 +7,7 @@ function WhatWeDOCard(props) {
         <Card className="whatwedocard"  >
             <Row className="whatwedocard-row" >
                 <Col md={5} className="whatwedocard-imgcol">
-                    <Card.Img
+                    <Card.Img className="whatimg"
                         src={props.img}
                     />
                 </Col>
