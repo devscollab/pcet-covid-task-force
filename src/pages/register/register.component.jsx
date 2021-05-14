@@ -95,6 +95,13 @@ class RegisterPage extends React.Component {
                         endCovidDate,
                         dateOfDose1,
                         dateOfDose2,
+                        isStudent,
+                        haCovid,
+                        isRecovered,
+                        isVaccinated,
+                        isRegisteredoncowin,
+                        caDonateblood,
+                        caDonateplasma,
                         password,
                         ...formData,
                     })
@@ -163,7 +170,7 @@ class RegisterPage extends React.Component {
                         handleChange={this.handleChange}
                         required
                     />
-                    <div className="row">
+                    <div className="custrow">
                         <CustomInput
                             customStyle={{ width: "140px", margin: "10px" }}
                             type="text"
@@ -196,7 +203,7 @@ class RegisterPage extends React.Component {
                         handleChange={this.handleChange}
                         required
                     />
-                    <div className="row">
+                    <div className="custrow">
                         <CustomInput
                             customStyle={{
                                 width: "100px",
@@ -223,7 +230,7 @@ class RegisterPage extends React.Component {
                         />
                     </div>
                     <div
-                        className="row"
+                        className="custrow"
                         style={{ alignSelf: "flex-start", margin: "1em 0" }}
                     >
                         <div className="field-legend">Gender:</div>
@@ -244,7 +251,7 @@ class RegisterPage extends React.Component {
                         </select>
                     </div>
                     <div
-                        className="row"
+                        className="custrow"
                         style={{ alignSelf: "flex-start", margin: "1em 0" }}
                     >
                         <fieldset className="radio-field">
@@ -285,7 +292,7 @@ class RegisterPage extends React.Component {
                     {this.state.isStudent ? (
                         <div style={{ width: "100%" }}>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -333,7 +340,7 @@ class RegisterPage extends React.Component {
                                 </select>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -382,7 +389,7 @@ class RegisterPage extends React.Component {
                                         border: "2px solid black",
                                         width: "70px",
                                     }}
-                                    name="course"
+                                    name="year"
                                     value={this.state.year}
                                     onChange={this.handleChange}
                                 >
@@ -394,7 +401,7 @@ class RegisterPage extends React.Component {
                                 </select>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "1em 0 0 10px",
@@ -447,7 +454,7 @@ class RegisterPage extends React.Component {
                             </div>
                             <div className="field-legend">Blood Group:</div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -489,7 +496,7 @@ class RegisterPage extends React.Component {
                                 />
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -512,7 +519,7 @@ class RegisterPage extends React.Component {
                             </div>
                             <div className="field-legend">Current Address:</div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -533,7 +540,7 @@ class RegisterPage extends React.Component {
                                 />
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -637,7 +644,7 @@ class RegisterPage extends React.Component {
                                 </select>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -671,7 +678,7 @@ class RegisterPage extends React.Component {
                                 />
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0 0 0",
@@ -717,7 +724,7 @@ class RegisterPage extends React.Component {
                                         Covid Start Date:
                                     </div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "0em 0",
@@ -736,7 +743,7 @@ class RegisterPage extends React.Component {
                                         />
                                     </div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "1em 0 0 0",
@@ -790,7 +797,7 @@ class RegisterPage extends React.Component {
                                                 Covid End Date:
                                             </div>
                                             <div
-                                                className="row"
+                                                className="custrow"
                                                 style={{
                                                     alignSelf: "flex-start",
                                                     margin: "0em 0",
@@ -818,7 +825,7 @@ class RegisterPage extends React.Component {
                             ) : null}
 
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -864,7 +871,7 @@ class RegisterPage extends React.Component {
                             {this.state.isVaccinated ? (
                                 <div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "1em 0",
@@ -900,7 +907,7 @@ class RegisterPage extends React.Component {
                                         Date of Dose 1:
                                     </div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "0em 0",
@@ -922,7 +929,7 @@ class RegisterPage extends React.Component {
                                         Date of Dose 2:
                                     </div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "0em 0",
@@ -942,7 +949,7 @@ class RegisterPage extends React.Component {
                                 </div>
                             ) : this.state.isVaccinated === false ? (
                                 <div
-                                    className="row"
+                                    className="custrow"
                                     style={{
                                         alignSelf: "flex-start",
                                         margin: "1em 0",
@@ -989,7 +996,7 @@ class RegisterPage extends React.Component {
                             ) : null}
 
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1032,7 +1039,7 @@ class RegisterPage extends React.Component {
                                 </fieldset>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1077,7 +1084,7 @@ class RegisterPage extends React.Component {
                                 </fieldset>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1098,7 +1105,7 @@ class RegisterPage extends React.Component {
                                 />
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1122,7 +1129,7 @@ class RegisterPage extends React.Component {
                     ) : this.state.isStudent === false ? (
                         <div style={{ width: "100%" }}>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1167,10 +1174,11 @@ class RegisterPage extends React.Component {
                                         Engineering and Technology, Talegaon,
                                         Pune
                                     </option>
+                                    <option value="na">Not Applicable</option>
                                 </select>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1201,10 +1209,11 @@ class RegisterPage extends React.Component {
                                     <option value="be">BE / B.Tech</option>
                                     <option value="me">ME / M.Tech</option>
                                     <option value="mca">MCA</option>
+                                    <option value="na">Not Applicable</option>
                                 </select>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "1em 0 0 10px",
@@ -1240,24 +1249,12 @@ class RegisterPage extends React.Component {
                                     <option value="auto">Automobile</option>
                                     <option value="mca">MCA</option>
                                     <option value="other">Other</option>
+                                    <option value="na">Not Applicable</option>
                                 </select>
-                                <CustomInput
-                                    customStyle={{
-                                        width: "70px",
-                                        margin: "10px",
-                                    }}
-                                    type="text"
-                                    name="div"
-                                    placeholder="Div"
-                                    maxLength="1"
-                                    value={this.state.div}
-                                    handleChange={this.handleChange}
-                                    required
-                                />
                             </div>
                             <div className="field-legend">Blood Group:</div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -1299,7 +1296,7 @@ class RegisterPage extends React.Component {
                                 /> */}
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -1322,7 +1319,7 @@ class RegisterPage extends React.Component {
                             </div>
                             <div className="field-legend">Current Address:</div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -1343,7 +1340,7 @@ class RegisterPage extends React.Component {
                                 />
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -1447,7 +1444,7 @@ class RegisterPage extends React.Component {
                                 </select>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "center",
                                     margin: "0.25em 0 1em 10px",
@@ -1481,7 +1478,7 @@ class RegisterPage extends React.Component {
                                 />
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0 0 0",
@@ -1527,7 +1524,7 @@ class RegisterPage extends React.Component {
                                         Covid Start Date:
                                     </div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "0em 0",
@@ -1546,7 +1543,7 @@ class RegisterPage extends React.Component {
                                         />
                                     </div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "1em 0 0 0",
@@ -1600,7 +1597,7 @@ class RegisterPage extends React.Component {
                                                 Covid End Date:
                                             </div>
                                             <div
-                                                className="row"
+                                                className="custrow"
                                                 style={{
                                                     alignSelf: "flex-start",
                                                     margin: "0em 0",
@@ -1628,7 +1625,7 @@ class RegisterPage extends React.Component {
                             ) : null}
 
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1674,7 +1671,7 @@ class RegisterPage extends React.Component {
                             {this.state.isVaccinated ? (
                                 <div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "1em 0",
@@ -1710,7 +1707,7 @@ class RegisterPage extends React.Component {
                                         Date of Dose 1:
                                     </div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "0em 0",
@@ -1732,7 +1729,7 @@ class RegisterPage extends React.Component {
                                         Date of Dose 2:
                                     </div>
                                     <div
-                                        className="row"
+                                        className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
                                             margin: "0em 0",
@@ -1752,7 +1749,7 @@ class RegisterPage extends React.Component {
                                 </div>
                             ) : this.state.isVaccinated === false ? (
                                 <div
-                                    className="row"
+                                    className="custrow"
                                     style={{
                                         alignSelf: "flex-start",
                                         margin: "1em 0",
@@ -1799,7 +1796,7 @@ class RegisterPage extends React.Component {
                             ) : null}
 
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1842,7 +1839,7 @@ class RegisterPage extends React.Component {
                                 </fieldset>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1887,7 +1884,7 @@ class RegisterPage extends React.Component {
                                 </fieldset>
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
@@ -1908,7 +1905,7 @@ class RegisterPage extends React.Component {
                                 />
                             </div>
                             <div
-                                className="row"
+                                className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
                                     margin: "1em 0",
