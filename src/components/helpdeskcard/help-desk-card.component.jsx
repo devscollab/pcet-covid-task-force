@@ -7,7 +7,7 @@ function HelpDeskCard(props) {
     return (
         <Card className="helpercard">
             <Card.Img
-                style={{ height: "170px" }}
+                style={{ height: "200px" }}
                 variant="top"
                 src={props.img}
             />
