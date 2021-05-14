@@ -73,7 +73,7 @@ class RegisterPage extends React.Component {
                         handleChange={this.handleChange}
                         required
                     />
-                    <div className="row">
+                    <div className="row-register">
                         <CustomInput
                             customStyle={{ width: "140px", margin: "10px" }}
                             type="text"
