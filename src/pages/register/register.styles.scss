@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    overflow-y: auto;
 
     &-form {
         display: flex;
@@ -19,6 +20,7 @@
 
 .error-message {
     color: red;
+    max-width: 300px;
 }
 
 .field-legend {
@@ -42,7 +44,7 @@
 
 .row-register {
     display: flex;
-    justify-content: space-between !important;
+    justify-content: space-between;
     align-items: center;
     min-width: 250px;
 }
