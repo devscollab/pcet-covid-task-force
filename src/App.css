@@ -30,6 +30,7 @@ body {
     height: 88vh;
     box-sizing: border-box;
     padding: 1em;
+    overflow-y: auto;
 
     line-height: 1.5em;
 
