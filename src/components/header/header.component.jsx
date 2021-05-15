@@ -13,7 +13,7 @@ const headerArray = [
     "Help Each Other",
 ];
 
-const userName = "John Doe";
+const userName = "Log Out";
 
 const Header = ({ isAuthenticated, authenticate, history }) => (
     <div className="header">
