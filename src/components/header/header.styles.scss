@@ -102,3 +102,8 @@ $small: 900px;
         align-items: center;
     }
 }
+.toggle-namebar{
+    @media screen and (max-width: $small) {
+        display: none !important;
+    }
+}

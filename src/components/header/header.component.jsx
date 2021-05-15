@@ -14,9 +14,10 @@ const headerArray = [
 ];
 const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     <a
+      className="toggle-namebar"
       href="/"
       ref={ref}
-      style={{color:"#018361"}}
+      style={{color:"#24C59B"}}
       onClick={(e) => {
         e.preventDefault();
         onClick(e);
@@ -26,8 +27,23 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
       &#x25bc;
     </a>
   ));
+  const CustommobileToggle = React.forwardRef(({ children, onClick }, ref) => (
+    <a
+      className="user-after-img"
+      href="/"
+      ref={ref}
+      style={{color:"#24C59B"}}
+      onClick={(e) => {
+        e.preventDefault();
+        onClick(e);
+      }}
+    >
+      {children}
+     
+    </a>
+  ));
 
-const userName = "Log Out";
+const userName = "John Doe";
 
 const Header = ({ isAuthenticated, authenticate, history }) => (
     <div className="header">
@@ -40,14 +56,14 @@ const Header = ({ isAuthenticated, authenticate, history }) => (
         </div>
         {isAuthenticated ? (
             <div className="header-right">
-                <Dropdown>
+                <Dropdown >
                     <Dropdown.Toggle as={CustomToggle}  id="dropdown-custom-components" className="toggle-namebar" >
                     {userName}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
                         <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3"
+                        <Dropdown.Item
                         onClick={() => {
                         localStorage.removeItem("token");
                         authenticate();
@@ -65,7 +81,23 @@ const Header = ({ isAuthenticated, authenticate, history }) => (
                 <div className="user-img">
                     <img src="https://picsum.photos/id/1005/54" alt="Display" />
                 </div>
-                <span className="user-after-img">&#9660;</span>
+               
+                <Dropdown >
+                    <Dropdown.Toggle as={CustommobileToggle} id="dropdown-custom-components"  >
+                    <span className="user-after-img">&#9660;</span> 
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                        <Dropdown.Item href="#/action-1">Profile</Dropdown.Item>
+                        <Dropdown.Item
+                        onClick={() => {
+                        localStorage.removeItem("token");
+                        authenticate();
+                    }}>
+                            Logout
+                        </Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
             </div>
         ) : (
             <div className="header-right">
