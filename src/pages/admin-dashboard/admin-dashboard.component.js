@@ -39,8 +39,9 @@ class AdminDashboard extends React.Component{
                                 </div>
                             ))}
                     </Col>
-                    <Col xs={12} md={10}>
-                    <Table striped bordered hover>
+                    <Col xs={12} md={10} className="datacol" >
+                        <h5>{this.state.activeItem}</h5>
+                    <Table striped bordered hover >
                         <thead>
                             <tr>
                             {Data[this.state.activeItem].Headers.map((member, index) => (
