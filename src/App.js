@@ -74,7 +74,7 @@ class App extends React.Component {
                             component={AskForHelpPage}
                         />
                         <Route
-                            path="/registered-sucessfully/:id"
+                            path="/registered-successfully/:id"
                             component={RegisteredSuccessfully}
                         />
                         <Route
