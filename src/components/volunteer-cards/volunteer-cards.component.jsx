@@ -8,7 +8,7 @@ function VolunteerCards(props) {
                minwidth:"550px"    
             }}
         >
-            <Card.Img
+            <Card.Img className="volimg"
                 style={{ height: "275px" }}
                 variant="top"
                 src={props.img}
