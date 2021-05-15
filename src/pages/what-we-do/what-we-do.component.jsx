@@ -9,7 +9,7 @@ import { whatWeDoData } from "./data";
 const WhatWeDoPage = () => {
     
     return(
-        <div className="what-we-do-page page" style={{}}>
+        <div className="what-we-do-page page" >
         <div className="help-desk-page-title">What We Do</div>
         <div className="help-desk-page-description">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.

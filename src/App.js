@@ -61,7 +61,11 @@ class App extends React.Component {
                                 authenticate={this.authenticate.bind(this)}
                             />
                         </Route>
-                        <Route path="/register" component={RegisterPage} />
+                        <Route path="/register">
+                            <RegisterPage
+                                authenticate={this.authenticate.bind(this)}
+                            />
+                        </Route>
                         <Route path="/" component={HomePage} />
                     </Switch>
                 </div>

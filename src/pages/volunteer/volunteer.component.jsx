@@ -6,25 +6,25 @@ const categories = [
     {
         title: "Central Helpdesk",
         desc: "Contact the central help desk if you want to know how we can help you during this pandemic",
-        img: "https://picsum.photos/1080",
+        img: "https://picsum.photos/550/275",
         button: "Ask for help",
     },
     {
         title: "Lab Testing Facility",
         desc: "If you need verified information of the pathology labs and which tests are available in which areas, we will try to provide all the information that you'll need to contact the correct lab",
-        img: "https://picsum.photos/1080",
+        img: "https://picsum.photos/550/275",
         button: "Ask for help",
     },
     {
         title: "Hospital Admission",
         desc: "Hospital bed availability is one of the concerning issues right now and we can help you get verified information about the availability",
-        img: "https://picsum.photos/1080",
+        img: "https://picsum.photos/550/275",
         button: "Ask for help",
     },
     {
         title: "Oxygen Bed and Ventilator arrangement",
         desc: "Critical cases might need Oxygen beds and ventilator arrangements and we can help you get correct information and contact details for the same",
-        img: "https://picsum.photos/1080",
+        img: "https://picsum.photos/550/275",
         button: "Ask for help",
     },
     
