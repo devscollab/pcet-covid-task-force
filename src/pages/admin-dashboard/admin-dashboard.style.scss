@@ -1,0 +1,35 @@
+$dmin: 767px;
+.mainCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+    text-align: center;
+    padding-top: 50px;
+    
+    @media screen and (max-width: $dmin) {
+        flex-direction: row;
+        height: 40px;
+        padding-top: 0px;
+        flex-flow: wrap;
+    }
+}
+.datacol{
+    overflow-x:auto;
+    text-align : center;
+}
+
+.active{
+    color: white;
+    padding: 10px 0;
+    border-radius: 15px;
+    @media screen and (max-width: $dmin) {
+        display: none;
+    }
+}
+
+table{
+    border:none;
+    border-radius: 15px;
+            box-shadow: 0 0 7px rgba(0, 0, 0, 0.1);
+}

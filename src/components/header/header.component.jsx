@@ -27,7 +27,7 @@ const CustomToggle = React.forwardRef(({ children, onClick }, ref) => (
     </a>
   ));
 
-const userName = "John Doe";
+const userName = "Log Out";
 
 const Header = ({ isAuthenticated, authenticate, history }) => (
     <div className="header">
