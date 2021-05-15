@@ -1,0 +1,14 @@
+$small: 900px;
+
+.ask-for-help-page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: scroll;
+
+    &-title {
+        font-size: 1.5em;
+        margin: 1em;
+        float: left;
+    }
+}

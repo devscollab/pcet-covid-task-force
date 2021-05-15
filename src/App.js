@@ -8,6 +8,7 @@ import WhatWeDoPage from "./pages/what-we-do/what-we-do.component";
 import ContactUsPage from "./pages/contact-us/contact-us.component";
 import LoginPage from "./pages/login/login.component";
 import RegisterPage from "./pages/register/register.component";
+import AskForHelpPage from "./pages/ask-for-help/ask-for-help.component";
 
 import Header from "./components/header/header.component";
 import Sidebar from "./components/sidebar/sidebar.component";
@@ -66,6 +67,10 @@ class App extends React.Component {
                                 authenticate={this.authenticate.bind(this)}
                             />
                         </Route>
+                        <Route
+                            path="/ask-for-help/:id"
+                            component={AskForHelpPage}
+                        />
                         <Route path="/" component={HomePage} />
                     </Switch>
                 </div>
