@@ -1,0 +1,19 @@
+$dmin: 767px;
+.mainCol{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
+    text-align: center;
+    padding-top: 50px;
+    
+    @media screen and (max-width: $dmin) {
+        flex-direction: row;
+    }
+}
+
+.active{
+    color: white;
+    padding: 10px 0;
+    border-radius: 15px;
+}

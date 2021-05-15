@@ -9,6 +9,8 @@ import ContactUsPage from "./pages/contact-us/contact-us.component";
 import LoginPage from "./pages/login/login.component";
 import RegisterPage from "./pages/register/register.component";
 import AskForHelpPage from "./pages/ask-for-help/ask-for-help.component";
+import RegisteredSuccessfully from "./pages/registered-successfully/registered-successfully.component";
+import AdminDashboard from "./pages/admin-dashboard/admin-dashboard.component";
 
 import Header from "./components/header/header.component";
 import Sidebar from "./components/sidebar/sidebar.component";
@@ -70,6 +72,14 @@ class App extends React.Component {
                         <Route
                             path="/ask-for-help/:id"
                             component={AskForHelpPage}
+                        />
+                        <Route
+                            path="/registered-sucessfully/:id"
+                            component={RegisteredSuccessfully}
+                        />
+                        <Route
+                            path="/admin-dashboard"
+                            component={AdminDashboard}
                         />
                         <Route path="/" component={HomePage} />
                     </Switch>
