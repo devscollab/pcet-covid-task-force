@@ -15,9 +15,6 @@ function WhatWeDOCard(props) {
                     <Card.Body className="whatwedocard-cardb">
                         <Card.Title>{props.title}</Card.Title>
                         <Card.Text>{props.desc}</Card.Text>
-                        <Button className="whatwedocard-button" >
-                            {props.button}
-                        </Button>
                     </Card.Body>
                 </Col>
             </Row>
