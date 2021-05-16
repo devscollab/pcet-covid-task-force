@@ -1,0 +1,27 @@
+.ask-for-help-form {
+    margin: 1em;
+
+    &-title {
+        font-size: 1.2em;
+        margin: 1em 0;
+        color: #018361;
+        text-align: center;
+    }
+}
+
+.error-message {
+    color: red;
+    max-width: 300px;
+}
+
+.field-legend {
+    margin: 0.5em 0.5em 0 1em;
+    align-self: flex-start;
+}
+
+.custrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 250px;
+}
