@@ -67,7 +67,12 @@ class AskForHelpForm extends React.Component {
                                 className="custrow"
                                 style={{ flexDirection: "column" }}
                             >
-                                <div className="field-legend">
+                                <div
+                                    className="field-legend"
+                                    style={{
+                                        width: "213px",
+                                    }}
+                                >
                                     {inputField.placeholder}:
                                 </div>
                                 <CustomInput {...inputField} />
@@ -99,7 +104,12 @@ class AskForHelpForm extends React.Component {
                 })}
                 <CustomButton
                     type="submit"
-                    customStyle={{ width: "250px", marginBottom: "0.25em" }}
+                    customStyle={{
+                        width: "250px",
+                        marginBottom: "0.25em",
+                        justifySelf: "center",
+                        alignSelf: "center",
+                    }}
                 >
                     Submit
                 </CustomButton>

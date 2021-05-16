@@ -1,5 +1,7 @@
 .ask-for-help-form {
     margin: 1em;
+    display: flex;
+    flex-direction: column;
 
     &-title {
         font-size: 1.2em;

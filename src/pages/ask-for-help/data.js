@@ -39,6 +39,36 @@ export const askForHelpFormData = {
                 required: true,
             },
             {
+                type: "number",
+                name: "age",
+                placeholder: "Age",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "tests",
+                placeholder: "Tests to be done",
+                required: true,
+            },
+            {
+                type: "date",
+                name: "requiredBy",
+                placeholder: "Required By",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "area",
+                placeholder: "Area",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "city",
+                placeholder: "City",
+                required: true,
+            },
+            {
                 type: "textarea",
                 name: "message",
                 maxLength: "500",
@@ -63,6 +93,36 @@ export const askForHelpFormData = {
                 required: true,
             },
             {
+                type: "number",
+                name: "age",
+                placeholder: "Age",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "healthCondition",
+                placeholder: "Health Condition",
+                required: true,
+            },
+            {
+                type: "date",
+                name: "requiredBy",
+                placeholder: "Required By",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "area",
+                placeholder: "Area",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "city",
+                placeholder: "City",
+                required: true,
+            },
+            {
                 type: "textarea",
                 name: "message",
                 maxLength: "500",
@@ -72,7 +132,7 @@ export const askForHelpFormData = {
         ],
     },
     "o2-bed-and-ventilator": {
-        category: "Oxygen Bed and Ventilator arrangement",
+        category: "Oxygen Bed and Ventilator",
         inputFields: [
             {
                 type: "text",
@@ -84,6 +144,42 @@ export const askForHelpFormData = {
                 type: "number",
                 name: "contactNumber",
                 placeholder: "Contact Number",
+                required: true,
+            },
+            {
+                type: "number",
+                name: "age",
+                placeholder: "Age",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "healthCondition",
+                placeholder: "Health Condition",
+                required: true,
+            },
+            {
+                type: "number",
+                name: "o2Level",
+                placeholder: "Oxygen Level",
+                required: true,
+            },
+            {
+                type: "date",
+                name: "requiredBy",
+                placeholder: "Required By",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "area",
+                placeholder: "Area",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "city",
+                placeholder: "City",
                 required: true,
             },
             {
@@ -111,6 +207,42 @@ export const askForHelpFormData = {
                 required: true,
             },
             {
+                type: "number",
+                name: "age",
+                placeholder: "Age",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "healthCondition",
+                placeholder: "Health Condition",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "medicinesRequired",
+                placeholder: "Medicines Required",
+                required: true,
+            },
+            {
+                type: "date",
+                name: "requiredBy",
+                placeholder: "Required By",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "area",
+                placeholder: "Area",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "city",
+                placeholder: "City",
+                required: true,
+            },
+            {
                 type: "textarea",
                 name: "message",
                 maxLength: "500",
@@ -132,6 +264,66 @@ export const askForHelpFormData = {
                 type: "number",
                 name: "contactNumber",
                 placeholder: "Contact Number",
+                required: true,
+            },
+            {
+                type: "number",
+                name: "age",
+                placeholder: "Age",
+                required: true,
+            },
+
+            {
+                type: "select",
+                name: "bloodOrPlasma",
+                placeholder: "Required",
+                options: ["Blood", "Plasma"],
+                required: true,
+            },
+            {
+                type: "select",
+                name: "bloodGroup",
+                placeholder: "Blood Group",
+                options: [
+                    "O+ve",
+                    "A+ve",
+                    "B+ve",
+                    "AB+ve",
+                    "O-ve",
+                    "A-ve",
+                    "B-ve",
+                    "AB-ve",
+                ],
+                required: true,
+            },
+            {
+                type: "text",
+                name: "healthCondition",
+                placeholder: "Health Condition",
+                required: true,
+            },
+            {
+                type: "date",
+                name: "requiredBy",
+                placeholder: "Required By",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "area",
+                placeholder: "Area",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "city",
+                placeholder: "City",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "hospital",
+                placeholder: "Hospital",
                 required: true,
             },
             {
@@ -172,8 +364,8 @@ export const askForHelpFormData = {
         inputFields: [
             {
                 type: "text",
-                name: "patientName",
-                placeholder: "Patient Name",
+                name: "name",
+                placeholder: "Full Name",
                 required: true,
             },
             {
@@ -220,14 +412,26 @@ export const askForHelpFormData = {
         inputFields: [
             {
                 type: "text",
-                name: "patientName",
-                placeholder: "Patient Name",
+                name: "name",
+                placeholder: "Full Name",
                 required: true,
             },
             {
                 type: "number",
                 name: "contactNumber",
                 placeholder: "Contact Number",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "area",
+                placeholder: "Area",
+                required: true,
+            },
+            {
+                type: "text",
+                name: "city",
+                placeholder: "City",
                 required: true,
             },
             {
@@ -255,6 +459,28 @@ export const askForHelpFormData = {
                 required: true,
             },
             {
+                type: "select",
+                name: "bloodGroup",
+                placeholder: "Blood Group",
+                options: [
+                    "O+ve",
+                    "A+ve",
+                    "B+ve",
+                    "AB+ve",
+                    "O-ve",
+                    "A-ve",
+                    "B-ve",
+                    "AB-ve",
+                ],
+                required: true,
+            },
+            {
+                type: "date",
+                name: "dateOfRecovery",
+                placeholder: "Recovery Date",
+                required: true,
+            },
+            {
                 type: "textarea",
                 name: "message",
                 maxLength: "500",
@@ -268,8 +494,8 @@ export const askForHelpFormData = {
         inputFields: [
             {
                 type: "text",
-                name: "patientName",
-                placeholder: "Patient Name",
+                name: "name",
+                placeholder: "Full Name",
                 required: true,
             },
             {
