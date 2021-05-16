@@ -49,8 +49,8 @@ class AskForHelpForm extends React.Component {
                                         border: "2px solid black",
                                     }}
                                     name={inputField.name}
-                                    // value={this.state.gender}
-                                    // onChange={this.handleChange}
+                                    value={this.state[inputField.name]}
+                                    onChange={this.handleChange}
                                 >
                                     {inputField.options.map((option) => (
                                         <option key={option} value={option}>
@@ -75,7 +75,11 @@ class AskForHelpForm extends React.Component {
                                 >
                                     {inputField.placeholder}:
                                 </div>
-                                <CustomInput {...inputField} />
+                                <CustomInput
+                                    {...inputField}
+                                    value={this.state[inputField.name]}
+                                    handleChange={this.handleChange}
+                                />
                             </div>
                         );
                     } else if (inputField.type === "textarea") {
@@ -91,13 +95,19 @@ class AskForHelpForm extends React.Component {
                                         margin: "0.5em",
                                         width: "213px",
                                     }}
+                                    value={this.state[inputField.name]}
+                                    onChange={this.handleChange}
                                 ></textarea>
                             </div>
                         );
                     } else {
                         return (
                             <div className="custrow" key={inputField.name}>
-                                <CustomInput {...inputField} />
+                                <CustomInput
+                                    {...inputField}
+                                    value={this.state[inputField.name]}
+                                    handleChange={this.handleChange}
+                                />
                             </div>
                         );
                     }

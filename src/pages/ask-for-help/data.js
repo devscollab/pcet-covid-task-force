@@ -1,6 +1,13 @@
 export const askForHelpFormData = {
     "central-help-desk": {
         category: "Central Help Desk",
+        initialState: {
+            patientName: "",
+            contactNumber: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -25,6 +32,18 @@ export const askForHelpFormData = {
     },
     "lab-testing": {
         category: "Lab Testing Facility",
+        initialState: {
+            patientName: "",
+            contactNumber: "",
+            age: "",
+            tests: "",
+            requiredBy: "",
+            area: "",
+            city: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -79,6 +98,18 @@ export const askForHelpFormData = {
     },
     "hospital-admission": {
         category: "Hospital Admission",
+        initialState: {
+            patientName: "",
+            contactNumber: "",
+            age: "",
+            healthCondition: "",
+            requiredBy: "",
+            area: "",
+            city: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -133,6 +164,19 @@ export const askForHelpFormData = {
     },
     "o2-bed-and-ventilator": {
         category: "Oxygen Bed and Ventilator",
+        initialState: {
+            patientName: "",
+            contactNumber: "",
+            age: "",
+            healthCondition: "",
+            o2Level: "",
+            requiredBy: "",
+            area: "",
+            city: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -193,6 +237,19 @@ export const askForHelpFormData = {
     },
     medicines: {
         category: "Medicines",
+        initialState: {
+            patientName: "",
+            contactNumber: "",
+            age: "",
+            healthCondition: "",
+            medicinesRequired: "",
+            requiredBy: "",
+            area: "",
+            city: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -253,6 +310,21 @@ export const askForHelpFormData = {
     },
     "blood-and-plasma": {
         category: "Blood and Plasma",
+        initialState: {
+            patientName: "",
+            contactNumber: "",
+            age: "",
+            bloodOrPlasma: "Blood",
+            bloodGroup: "O+ve",
+            healthCondition: "",
+            requiredBy: "",
+            area: "",
+            city: "",
+            hospital: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -337,6 +409,13 @@ export const askForHelpFormData = {
     },
     "moral-support": {
         category: "Moral Support",
+        initialState: {
+            patientName: "",
+            contactNumber: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -361,6 +440,13 @@ export const askForHelpFormData = {
     },
     vaccination: {
         category: "Vaccination",
+        initialState: {
+            name: "",
+            contactNumber: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -385,6 +471,13 @@ export const askForHelpFormData = {
     },
     "doctors-for-suggestion": {
         category: "Vaccination",
+        initialState: {
+            patientName: "",
+            contactNumber: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -409,6 +502,15 @@ export const askForHelpFormData = {
     },
     food: {
         category: "Food Availability for the needy",
+        initialState: {
+            name: "",
+            contactNumber: "",
+            area: "",
+            city: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -445,6 +547,15 @@ export const askForHelpFormData = {
     },
     "post-covid-communication": {
         category: "Post Covid Communication",
+        initialState: {
+            patientName: "",
+            contactNumber: "",
+            bloodGroup: "O+ve",
+            dateOfRecovery: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
@@ -491,6 +602,13 @@ export const askForHelpFormData = {
     },
     "technical-support": {
         category: "Technical Support",
+        initialState: {
+            name: "",
+            contactNumber: "",
+            message: "",
+            err: "",
+            token: "",
+        },
         inputFields: [
             {
                 type: "text",
