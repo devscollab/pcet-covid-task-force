@@ -31,6 +31,29 @@ class Requests {
         };
         return axios.get(this.route + "/get-user", config);
     }
+
+    addRequest(token, requestObject) {
+        let config = {
+            method: "post",
+            url: this.route + "/add-request",
+            headers: {
+                Authorization: "Token " + token,
+            },
+        };
+        return axios.post(this.route + "/add-request", requestObject, config);
+    }
+
+    getRequests(token) {
+        let config = {
+            method: "get",
+            url: this.route + "/get-requests",
+            headers: {
+                Authorization: "Bearer " + token,
+            },
+        };
+        return axios.get(this.route + "/get-requests", config);
+    }
 }
 
 export default new Requests();
+// module.exports = new Requests("http://localhost:3000")
