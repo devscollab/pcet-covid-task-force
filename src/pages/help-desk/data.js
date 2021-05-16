@@ -7,11 +7,11 @@ export const helpDeskData = [
         route: "central-help-desk",
     },
     {
-        title: "Lab Testing Facility",
-        desc: "If you need verified information of the pathology labs and which tests are available in which areas, we will try to provide all the information that you'll need to contact the correct lab",
-        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/lab_test2.png",
+        title: "Blood and Plasma",
+        desc: "If you need Blood/ Plasma we will help find contacts and people willing to donate and connect them with you",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/Blood2.png",
         button: "Ask for help",
-        route: "lab-testing",
+        route: "blood-and-plasma",
     },
     {
         title: "Hospital Admission",
@@ -35,11 +35,11 @@ export const helpDeskData = [
         route: "medicines",
     },
     {
-        title: "Blood and Plasma",
-        desc: "If you need Blood/ Plasma we will help find contacts and people willing to donate and connect them with you",
-        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/Blood2.png",
+        title: "Lab Testing Facility",
+        desc: "If you need verified information of the pathology labs and which tests are available in which areas, we will try to provide all the information that you'll need to contact the correct lab",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/lab_test2.png",
         button: "Ask for help",
-        route: "blood-and-plasma",
+        route: "lab-testing",
     },
     {
         title: "Moral Support",
