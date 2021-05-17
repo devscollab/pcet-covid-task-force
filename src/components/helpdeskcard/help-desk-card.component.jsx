@@ -4,6 +4,15 @@ import { withRouter } from "react-router-dom";
 
 import "./help-desk-card.style.scss";
 
+const onButtonClick = (route, history) => {
+    let token = localStorage.getItem("token");
+    if (token) {
+        history.push(`/ask-for-help/${route}`);
+    } else {
+        history.push(`/login`);
+    }
+};
+
 function HelpDeskCard({ title, img, desc, button, route, history }) {
     return (
         <Card className="helpercard">
@@ -19,7 +28,7 @@ function HelpDeskCard({ title, img, desc, button, route, history }) {
                 <Button
                     className="helpercard-button"
                     onClick={() => {
-                        history.push(`/ask-for-help/${route}`);
+                        onButtonClick(route, history);
                     }}
                 >
                     {button}

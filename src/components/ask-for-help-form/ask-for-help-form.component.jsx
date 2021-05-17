@@ -1,7 +1,10 @@
 import React from "react";
+import { withRouter } from "react-router-dom";
 
 import CustomInput from "../custom-input/custom-input.component";
 import CustomButton from "../custom-button/custom-button.component";
+
+import requests from "../../helpers/requests";
 
 import "./ask-for-help-form.styles.scss";
 
@@ -13,7 +16,38 @@ class AskForHelpForm extends React.Component {
 
     handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(`Submit`);
+
+        if (this.state.requiredBy) {
+            this.state.requiredBy = new Date(this.state.requiredBy).getTime();
+        }
+
+        if (this.state.dateOfRecovery) {
+            this.state.dateOfRecovery = new Date(
+                this.state.dateOfRecovery
+            ).getTime();
+        }
+
+        let token = localStorage.getItem("token");
+        if (token) {
+            let requestObject = this.state;
+            delete requestObject["err"];
+            let requestData = {
+                requestType: this.props.requestType,
+                requestObject: requestObject,
+            };
+            requests.addRequest(token, requestData).then((res) => {
+                if (res.data.status === 200) {
+                    this.props.history.push(
+                        `/registered-successfully/${res.data.requestId}`
+                    );
+                } else {
+                    this.setState({ err: res.data.message });
+                }
+            });
+        } else {
+            // not logged in
+            this.props.history.push("/login");
+        }
     };
 
     handleChange = (event) => {
@@ -112,6 +146,7 @@ class AskForHelpForm extends React.Component {
                         );
                     }
                 })}
+                <div className="error-message">{this.state.err}</div>
                 <CustomButton
                     type="submit"
                     customStyle={{
@@ -128,4 +163,4 @@ class AskForHelpForm extends React.Component {
     }
 }
 
-export default AskForHelpForm;
+export default withRouter(AskForHelpForm);

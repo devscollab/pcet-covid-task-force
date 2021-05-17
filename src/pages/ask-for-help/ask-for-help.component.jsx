@@ -11,7 +11,10 @@ const AskForHelpPage = ({ match }) => (
         <div className="ask-for-help-page-title">Ask For Help</div>
         <div className="ask-for-help-page-form-container">
             {askForHelpFormData[match.params.id] !== undefined ? (
-                <AskForHelpForm {...askForHelpFormData[match.params.id]} />
+                <AskForHelpForm
+                    {...askForHelpFormData[match.params.id]}
+                    requestType={match.params.id}
+                />
             ) : (
                 <div>404: Not Found</div>
             )}
