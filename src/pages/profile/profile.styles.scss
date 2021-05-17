@@ -1,0 +1,14 @@
+$small: 900px;
+
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+
+    &-title {
+        font-size: 1.5em;
+        margin: 1em;
+        line-height: 1.2em;
+    }
+}

@@ -20,10 +20,12 @@ class HelpDeskPage extends React.Component {
             <div className="help-desk-page page" style={{}}>
                 <div className="help-desk-page-title">Help Desk</div>
                 <div className="help-desk-page-description">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Consequuntur magni qui voluptatibus quaerat quisquam
-                    provident. Vel vero similique enim excepturi quam rem, iste
-                    sunt ullam ipsam odit tenetur quos molestias.
+                    Fill out the form for any given category below to ask for
+                    help. Please note that filling out the forms on this website
+                    does not guarantee that we'll provide whatever required but
+                    we will give it our 100% to find resources and contact you
+                    back with any assistance available. You can contact us
+                    directly after filling out the forms to track the status.
                 </div>
                 <Container fluid>
                     <Row>
