@@ -53,7 +53,7 @@ const HomePage = ({ history }) => (
                 onClick={() => history.push("/what-we-do")}
             >
                 <WhatWeDoColorLogo className="quick-link-img" />
-                <div className="quick-link-text">Understand What We Do</div>
+                <div className="quick-link-text">Know more About Us</div>
             </div>
             <div
                 className="quick-link"
