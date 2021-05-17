@@ -47,6 +47,7 @@ $small: 900px;
                     text-align: center;
                     margin: 10px;
                     padding: 0 10px;
+                    width: 360px;
                     height: 60px;
                     font-size: 1.2em;
                     p {
@@ -76,6 +77,9 @@ $small: 900px;
                         &:hover {
                             cursor: pointer;
                         }
+                    }
+                    @media screen and (max-width: $small) {
+                        width:300px;
                     }
                 }
 
