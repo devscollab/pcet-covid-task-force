@@ -93,11 +93,11 @@ const data = [
     {
         title: "Technical Support team",
         img: "https://picsum.photos/200/300",
-        name1: "X",
-        contact1: "0000000000",
+        name1: "Palash Potnurwar",
+        contact1: "8806558785",
         name2: "Y",
         contact2: "0000000000",
-    }
+    },
 ];
 const ContactUsPage = () => (
     <div className="contact-us-page page">
@@ -107,9 +107,9 @@ const ContactUsPage = () => (
                 <div key={index}>
                     <p className="title">{d.title}</p>
                     <div className="contact-us-card">
-                        <div className="contact-us-card-img">
-                            <img src={d.img} alt="" />
-                        </div>
+                        {/* <div className="contact-us-card-img">
+                                <img src={d.img} alt="" />
+                            </div> */}
                         <div className="contact-us-card-data">
                             <div className="contact-us-card-data-d1">
                                 <div className="info">
@@ -141,8 +141,12 @@ const ContactUsPage = () => (
                                     />
                                 </div>
                             </div>
-                            <div className={index==8?"":"line" }></div>
-                            <div className={index==8?"":"contact-us-card-data-d1" }>
+                            <div className={index === 8 ? "" : "line"}></div>
+                            <div
+                                className={
+                                    index === 8 ? "" : "contact-us-card-data-d1"
+                                }
+                            >
                                 <div className="info">
                                     <p>{d.name2}</p>
                                     <p>

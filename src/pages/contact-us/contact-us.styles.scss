@@ -79,7 +79,8 @@ $small: 900px;
                         }
                     }
                     @media screen and (max-width: $small) {
-                        width:300px;
+                        width: 300px;
+                        text-align: left;
                     }
                 }
 
@@ -97,11 +98,12 @@ $small: 900px;
                 @media screen and (max-width: $small) {
                     flex-direction: column;
                     align-items: center;
+                    text-align: left;
                 }
             }
 
             @media screen and (max-width: $small) {
-                text-align: center;
+                // text-align: center;
                 align-items: flex-start;
             }
         }

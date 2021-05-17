@@ -6,7 +6,6 @@ export const askForHelpFormData = {
             contactNumber: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -42,7 +41,6 @@ export const askForHelpFormData = {
             city: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -108,7 +106,6 @@ export const askForHelpFormData = {
             city: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -175,7 +172,6 @@ export const askForHelpFormData = {
             city: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -248,7 +244,6 @@ export const askForHelpFormData = {
             city: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -323,7 +318,6 @@ export const askForHelpFormData = {
             hospital: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -414,7 +408,6 @@ export const askForHelpFormData = {
             contactNumber: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -445,7 +438,6 @@ export const askForHelpFormData = {
             contactNumber: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -476,7 +468,6 @@ export const askForHelpFormData = {
             contactNumber: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -509,7 +500,6 @@ export const askForHelpFormData = {
             city: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -554,7 +544,6 @@ export const askForHelpFormData = {
             dateOfRecovery: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
@@ -607,7 +596,6 @@ export const askForHelpFormData = {
             contactNumber: "",
             message: "",
             err: "",
-            token: "",
         },
         inputFields: [
             {
