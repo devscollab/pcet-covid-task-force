@@ -5,36 +5,98 @@ import { ReactComponent as CallLogo } from "../../assets/call.svg";
 
 const data = [
     {
-        title: "Food",
+        title: "Central Help Desk",
         img: "https://picsum.photos/200/300",
-        name1: "John Doe",
-        contact1: "8421546859",
-        name2: "Name Beta",
-        contact2: "8421546859",
+        name1: "Anand Lunawant",
+        contact1: "8983628653",
+        name2: "Tejaswini Yesugade",
+        contact2: "9075592361",
     },
     {
-        title: "Blood",
+        title: "Blood & Plasma Team",
         img: "https://picsum.photos/200/300",
-        name1: "Name Alpha",
-        contact1: "8421546859",
-        name2: "Name Beta",
-        contact2: "8421546859",
+        name1: "Rakshita Khidbide",
+        contact1: "9168741574",
+        name2: "Pooja Gaikwad",
+        contact2: "8446871990",
     },
     {
-        title: "Hospital",
+        title: "Oxygen bed and ventilator arrangement team",
         img: "https://picsum.photos/200/300",
-        name1: "Name Alpha",
-        contact1: "8421546859",
-        name2: "Name Beta",
-        contact2: "8421546859",
+        name1: "Jayesh pawar",
+        contact1: "9595377413",
+        name2: "Mansi kadam",
+        contact2: "8237897104",
     },
     {
-        title: "Vaccine",
+        title: "Hospital admissions team",
         img: "https://picsum.photos/200/300",
-        name1: "Name Alpha",
-        contact1: "8421546859",
-        name2: "Name Beta",
-        contact2: "8421546859",
+        name1: "Prasad Harer",
+        contact1: "9657808761",
+        name2: "Kiran Chinchore",
+        contact2: "8788573558",
+    },
+    {
+        title: "Medicine Information",
+        img: "https://picsum.photos/200/300",
+        name1: "Chandan",
+        contact1: "8828453096",
+        name2: "Vinay",
+        contact2: "9130843969",
+    },
+    {
+        title: "Lab & Testing Team",
+        img: "https://picsum.photos/200/300",
+        name1: "Ruchika Kalagate",
+        contact1: "7755965626",
+        name2: "Pranav Bramhe",
+        contact2: "7719829201",
+    },
+    {
+        title: "Food availability for the needy",
+        img: "https://picsum.photos/200/300",
+        name1: "Ashish Bhagwat",
+        contact1: "9421934981",
+        name2: "Swarali Gholave",
+        contact2: "8600143437",
+    },
+    {
+        title: "Vaccination Information",
+        img: "https://picsum.photos/200/300",
+        name1: "Kajal Joshi",
+        contact1: "9130203207",
+        name2: "Nachiket D",
+        contact2: "96659575867",
+    },
+    {
+        title: "Doctors suggestions",
+        img: "https://picsum.photos/200/300",
+        name1: "Sayali Mahajan",
+        contact1: "9172426703",
+    },
+    {
+        title: "Moral support team",
+        img: "https://picsum.photos/200/300",
+        name1: "Rushikesh Uttarwar",
+        contact1: "9404110192",
+        name2: "Ritvik deshpande",
+        contact2: " 9067076568",
+    },
+    {
+        title: "Post Covid Communitcation team",
+        img: "https://picsum.photos/200/300",
+        name1: "Omkar Gadre",
+        contact1: "9370310696",
+        name2: "Manasi Bajare",
+        contact2: "8551014184",
+    },
+    {
+        title: "Technical Support team",
+        img: "https://picsum.photos/200/300",
+        name1: "Palash Potnurwar",
+        contact1: "8806558785",
+        name2: "Arnav Pant",
+        contact2: "8275691934",
     },
 ];
 const ContactUsPage = () => (
@@ -45,9 +107,9 @@ const ContactUsPage = () => (
                 <div key={index}>
                     <p className="title">{d.title}</p>
                     <div className="contact-us-card">
-                        <div className="contact-us-card-img">
-                            <img src={d.img} alt="" />
-                        </div>
+                        {/* <div className="contact-us-card-img">
+                                <img src={d.img} alt="" />
+                            </div> */}
                         <div className="contact-us-card-data">
                             <div className="contact-us-card-data-d1">
                                 <div className="info">
@@ -79,8 +141,12 @@ const ContactUsPage = () => (
                                     />
                                 </div>
                             </div>
-                            <div className="line"></div>
-                            <div className="contact-us-card-data-d1">
+                            <div className={index === 8 ? "" : "line"}></div>
+                            <div
+                                className={
+                                    index === 8 ? "" : "contact-us-card-data-d1"
+                                }
+                            >
                                 <div className="info">
                                     <p>{d.name2}</p>
                                     <p>
