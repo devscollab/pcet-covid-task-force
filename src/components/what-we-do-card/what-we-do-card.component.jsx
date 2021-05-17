@@ -12,7 +12,71 @@ function WhatWeDOCard(props) {
                 <Col md={7}>
                     <Card.Body className="whatwedocard-cardb">
                         <Card.Title>{props.title}</Card.Title>
-                        <Card.Text>{props.desc}</Card.Text>
+                        {props.title !==
+                        "PCET Covid Task Force Web Platform" ? (
+                            <Card.Text>{props.desc}</Card.Text>
+                        ) : (
+                            <Card.Text>
+                                This web platform is built using React, MongoDB,
+                                hosted on Azure App Services and developed by{" "}
+                                <br />
+                                <a
+                                    href="https://github.com/tejasmorkar"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    @tejasmorkar
+                                </a>
+                                <br />
+                                <a
+                                    href="https://github.com/SuyashSonawane"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    @SuyashSonawane
+                                </a>
+                                <br />
+                                <a
+                                    href="https://github.com/Yash0411"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    @Yash0411
+                                </a>
+                                <br />
+                                <a
+                                    href="https://github.com/shubhd556"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    @shubhd556
+                                </a>
+                                <br />
+                                <a
+                                    href="https://github.com/raibove"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    @raibove
+                                </a>
+                                <br />
+                                <a
+                                    href="https://github.com/yashb867"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    @yashb867
+                                </a>
+                                <br />
+                                <a
+                                    href="https://github.com/shubhamrajput0369"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    @shubhamrajput0369
+                                </a>
+                            </Card.Text>
+                        )}
                     </Card.Body>
                 </Col>
             </Row>
