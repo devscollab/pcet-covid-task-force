@@ -6,21 +6,21 @@ export const whatWeDoData = [
         button: "Ask for help",
     },
     {
-        title: "PCET- Pimpri Chinchwad Education trust",
-        desc: "PCET's mission is to help society through quality education  by creating, communicating and applying knowledge, art and academic values. PCET provides specialised courses like Engineering, MBA and MCA by professional and passionate instructors.",
-        img: "https://drive.google.com/uc?id=1yjpO1Ek88VqAR4LWKe4Q0SrenmyKxdvH",
+        title: "Our Mission",
+        desc: "To help our students, alumni, and their immediate family members, we have created PCET STUDENTS COVID TASK FORCE, which will try to help the concerned people. We try to provide help in areas like Lab Testing, Hospital admission, Oxygen bed, Ventilator, Plasma, Medicines, Moral Support, Arranging Isolation Beds, Medical suggestions from Doctors, etc.",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/vaccine2.png",
         button: "Ask for help",
     },
     {
-        title: "Our Mission",
-        desc: "Hospital bed availability is one of the concerning issues right now and we can help you get verified information about the availability",
-        img: "https://drive.google.com/uc?id=1yroVrDrBMmZUaQFKG5IwPwlkAaBOlrsk",
+        title: "PCET- Pimpri Chinchwad Education trust",
+        desc: "PCET's mission is to help society through quality education  by creating, communicating and applying knowledge, art and academic values. PCET provides specialised courses like Engineering, MBA and MCA by professional and passionate instructors.",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/pcet.png",
         button: "Ask for help",
     },
     {
         title: "Developers",
         desc: "Critical cases might need Oxygen beds and ventilator arrangements and we can help you get correct information and contact details for the same",
-        img: "https://drive.google.com/uc?id=1euis01Dp391o5SbnYrRUZ8XxO1QU_CKO",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/developer.png",
         button: "Ask for help",
     },
 ];
