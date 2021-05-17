@@ -10,12 +10,12 @@ const WhatWeDoPage = () => {
     return (
         <div className="what-we-do-page page">
             <div className="help-desk-page-title">About Us</div>
-            <div className="help-desk-page-description">
+            {/* <div className="help-desk-page-description">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                 Consequuntur magni qui voluptatibus quaerat quisquam provident.
                 Vel vero similique enim excepturi quam rem, iste sunt ullam
                 ipsam odit tenetur quos molestias.
-            </div>
+            </div> */}
             <Container fluid>
                 <Row>
                     {whatWeDoData.map((member, index) => (

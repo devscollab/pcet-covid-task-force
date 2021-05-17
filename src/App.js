@@ -11,6 +11,7 @@ import RegisterPage from "./pages/register/register.component";
 import AskForHelpPage from "./pages/ask-for-help/ask-for-help.component";
 import RegisteredSuccessfully from "./pages/registered-successfully/registered-successfully.component";
 import AdminDashboard from "./pages/admin-dashboard/admin-dashboard.component";
+import ProfilePage from "./pages/profile/profile.component";
 
 import Header from "./components/header/header.component";
 import Sidebar from "./components/sidebar/sidebar.component";
@@ -81,6 +82,7 @@ class App extends React.Component {
                             path="/admin-dashboard"
                             component={AdminDashboard}
                         />
+                        <Route path="/profile" component={ProfilePage} />
                         <Route path="/" component={HomePage} />
                     </Switch>
                 </div>
