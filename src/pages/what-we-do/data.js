@@ -18,8 +18,8 @@ export const whatWeDoData = [
         button: "Ask for help",
     },
     {
-        title: "Developers",
-        desc: "Critical cases might need Oxygen beds and ventilator arrangements and we can help you get correct information and contact details for the same",
+        title: "PCET Covid Task Force Web Platform",
+        desc: `This web platform is built using React, MongoDB and hosted on Azure App Services.`,
         img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/developers.png",
         button: "Ask for help",
     },
