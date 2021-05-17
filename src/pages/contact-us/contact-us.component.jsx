@@ -95,8 +95,8 @@ const data = [
         img: "https://picsum.photos/200/300",
         name1: "Palash Potnurwar",
         contact1: "8806558785",
-        name2: "Y",
-        contact2: "0000000000",
+        name2: "Arnav Pant",
+        contact2: "8275691934",
     },
 ];
 const ContactUsPage = () => (
