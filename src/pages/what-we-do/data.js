@@ -20,7 +20,7 @@ export const whatWeDoData = [
     {
         title: "Developers",
         desc: "Critical cases might need Oxygen beds and ventilator arrangements and we can help you get correct information and contact details for the same",
-        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/developer.png",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/developers.png",
         button: "Ask for help",
     },
 ];
