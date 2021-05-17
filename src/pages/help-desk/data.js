@@ -65,7 +65,7 @@ export const helpDeskData = [
     {
         title: "Food Availability for the needy",
         desc: "We will help you find verified resources for food necessities and also help get the food delivered to you if you can't go out due to quarantine or such reasons",
-        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/food_del2.jpg",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/food_del2.webp",
         button: "Ask for help",
         route: "food",
     },
