@@ -95,7 +95,7 @@ const Header = ({ isAuthenticated, authenticate, history }) => (
                     }}
                 >
                     <img
-                        src="https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/account.png"
+                        src="https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/account.webp"
                         alt="Account"
                     />
                 </div>
