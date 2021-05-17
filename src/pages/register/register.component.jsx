@@ -190,14 +190,14 @@ class RegisterPage extends React.Component {
                             required
                         />
                     </div>
-                    <div className="field-legend">Date of Birth:</div>
+                    {/* <div className="field-legend">Date of Birth:</div> */}
                     <CustomInput
                         customStyle={{
                             width: "300px",
                         }}
-                        type="date"
+                        type="text"
                         name="dob"
-                        placeholder="dob"
+                        placeholder="Date of Birth"
                         max="2021-01-01"
                         value={this.state.dob}
                         handleChange={this.handleChange}
@@ -720,9 +720,9 @@ class RegisterPage extends React.Component {
                             </div>
                             {this.state.haCovid ? (
                                 <div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Covid Start Date:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
@@ -735,8 +735,9 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="startCovidDate"
+                                            placeholder="When was it detected?"
                                             value={this.state.startCovidDate}
                                             handleChange={this.handleChange}
                                             required
@@ -793,9 +794,9 @@ class RegisterPage extends React.Component {
                                     </div>
                                     {this.state.isRecovered ? (
                                         <div>
-                                            <div className="field-legend">
+                                            {/* <div className="field-legend">
                                                 Covid End Date:
-                                            </div>
+                                            </div> */}
                                             <div
                                                 className="custrow"
                                                 style={{
@@ -808,8 +809,9 @@ class RegisterPage extends React.Component {
                                                         width: "300px",
                                                         margin: "0 1em",
                                                     }}
-                                                    type="date"
+                                                    type="text"
                                                     name="endCovidDate"
+                                                    placeholder="When did your quarantine end?"
                                                     value={
                                                         this.state.endCovidDate
                                                     }
@@ -903,9 +905,9 @@ class RegisterPage extends React.Component {
                                             </option>
                                         </select>
                                     </div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Date of Dose 1:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
@@ -918,21 +920,22 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="dateOfDose1"
+                                            placeholder="Date of Dose 1?"
                                             value={this.state.dateOfDose1}
                                             handleChange={this.handleChange}
                                             required
                                         />
                                     </div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Date of Dose 2:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
-                                            margin: "0em 0",
+                                            margin: "1em 0",
                                         }}
                                     >
                                         <CustomInput
@@ -940,8 +943,9 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="dateOfDose2"
+                                            placeholder="Date of Dose 2?"
                                             value={this.state.dateOfDose2}
                                             handleChange={this.handleChange}
                                         />
@@ -1520,9 +1524,9 @@ class RegisterPage extends React.Component {
                             </div>
                             {this.state.haCovid ? (
                                 <div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Covid Start Date:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
@@ -1535,8 +1539,9 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="startCovidDate"
+                                            placeholder="When was it detected?"
                                             value={this.state.startCovidDate}
                                             handleChange={this.handleChange}
                                             required
@@ -1593,9 +1598,9 @@ class RegisterPage extends React.Component {
                                     </div>
                                     {this.state.isRecovered ? (
                                         <div>
-                                            <div className="field-legend">
+                                            {/* <div className="field-legend">
                                                 Covid End Date:
-                                            </div>
+                                            </div> */}
                                             <div
                                                 className="custrow"
                                                 style={{
@@ -1608,8 +1613,9 @@ class RegisterPage extends React.Component {
                                                         width: "300px",
                                                         margin: "0 1em",
                                                     }}
-                                                    type="date"
+                                                    type="text"
                                                     name="endCovidDate"
+                                                    placeholder="When did your quarantine end?"
                                                     value={
                                                         this.state.endCovidDate
                                                     }
@@ -1703,9 +1709,9 @@ class RegisterPage extends React.Component {
                                             </option>
                                         </select>
                                     </div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Date of Dose 1:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
@@ -1718,21 +1724,22 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="dateOfDose1"
+                                            placeholder="Date of Dose 1?"
                                             value={this.state.dateOfDose1}
                                             handleChange={this.handleChange}
                                             required
                                         />
                                     </div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Date of Dose 2:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
-                                            margin: "0em 0",
+                                            margin: "1em 0",
                                         }}
                                     >
                                         <CustomInput
@@ -1740,8 +1747,9 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="dateOfDose2"
+                                            placeholder="Date of Dose 2?"
                                             value={this.state.dateOfDose2}
                                             handleChange={this.handleChange}
                                         />
