@@ -14,7 +14,7 @@ export const whatWeDoData = [
     {
         title: "PCET- Pimpri Chinchwad Education trust",
         desc: "PCET's mission is to help society through quality education  by creating, communicating and applying knowledge, art and academic values. PCET provides specialised courses like Engineering, MBA and MCA by professional and passionate instructors.",
-        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/pcet.webp",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/pcet.png",
         button: "Ask for help",
     },
     {
