@@ -26,6 +26,7 @@ class App extends React.Component {
         this.state = {
             activatedItem: 1,
             isAuthenticated: false,
+            userData: null,
         };
     }
 
@@ -38,8 +39,21 @@ class App extends React.Component {
         }
     }
 
+    updateUserName() {
+        let localUserData = {
+            firstName: localStorage.getItem("firstName"),
+            lastName: localStorage.getItem("lastName"),
+        };
+        if (localUserData.firstName) {
+            this.setState({ userData: localUserData });
+        } else {
+            this.setState({ userData: { firstName: "John", lastName: "Doe" } });
+        }
+    }
+
     componentDidMount() {
         this.authenticate();
+        this.updateUserName();
     }
 
     render() {
@@ -49,6 +63,8 @@ class App extends React.Component {
                     className="header"
                     isAuthenticated={this.state.isAuthenticated}
                     authenticate={this.authenticate.bind(this)}
+                    updateUserName={this.updateUserName.bind(this)}
+                    userData={this.state.userData}
                 />
                 <div className="main-container">
                     <Sidebar
@@ -63,6 +79,7 @@ class App extends React.Component {
                         <Route path="/login">
                             <LoginPage
                                 authenticate={this.authenticate.bind(this)}
+                                updateUserName={this.updateUserName.bind(this)}
                             />
                         </Route>
                         <Route path="/register">

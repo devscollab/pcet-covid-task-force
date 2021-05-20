@@ -6,7 +6,7 @@ import { ReactComponent as VolunteerColorLogo } from "../../assets/volunteer-col
 import { ReactComponent as WhatWeDoColorLogo } from "../../assets/what-we-do-color.svg";
 import { ReactComponent as ContactUsColorLogo } from "../../assets/contact-us-color.svg";
 
-import Banner from "../../assets/banner.png";
+import Banner from "../../assets/banner.webp";
 
 import "./home.styles.scss";
 

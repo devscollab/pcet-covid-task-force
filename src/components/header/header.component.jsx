@@ -42,113 +42,115 @@ const CustommobileToggle = React.forwardRef(({ children, onClick }, ref) => (
     </a>
 ));
 
-const userName = "John Doe";
-
-const Header = ({ isAuthenticated, authenticate, history }) => (
-    <div className="header">
-        <div className="header-left" onClick={() => history.push("/")}>
-            <Logo className="logo" />
-            <span className="header-title">PCET Covid Task Force</span>
-        </div>
-        <div className="header-center">
-            <HeaderTips array={headerArray} />
-        </div>
-        {isAuthenticated ? (
-            <div className="header-right">
-                <Dropdown>
-                    <Dropdown.Toggle
-                        as={CustomToggle}
-                        id="dropdown-custom-components"
-                        className="toggle-namebar"
-                    >
-                        {userName}
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu>
-                        <Dropdown.Item
-                            onClick={() => {
-                                history.push("/profile");
-                            }}
+const Header = ({ isAuthenticated, authenticate, userData, history }) => {
+    return (
+        <div className="header">
+            <div className="header-left" onClick={() => history.push("/")}>
+                <Logo className="logo" />
+                <span className="header-title">PCET Covid Task Force</span>
+            </div>
+            <div className="header-center">
+                <HeaderTips array={headerArray} />
+            </div>
+            {isAuthenticated ? (
+                <div className="header-right">
+                    <Dropdown>
+                        <Dropdown.Toggle
+                            as={CustomToggle}
+                            id="dropdown-custom-components"
+                            className="toggle-namebar"
                         >
-                            Profile
-                        </Dropdown.Item>
-                        <Dropdown.Item
-                            onClick={() => {
-                                localStorage.removeItem("token");
-                                authenticate();
-                            }}
-                        >
-                            Logout
-                        </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                {/* <span
+                            {userData.firstName} {userData.lastName}
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item
+                                onClick={() => {
+                                    history.push("/profile");
+                                }}
+                            >
+                                Profile
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                onClick={() => {
+                                    localStorage.clear();
+                                    authenticate();
+                                    history.push("/");
+                                }}
+                            >
+                                Logout
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    {/* <span
                     className="user-name"
                     
                 >
                     
                 </span> */}
-                <div
-                    className="user-img"
-                    onClick={() => {
-                        history.push("/profile");
-                    }}
-                >
-                    <img
-                        src="https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/account.png"
-                        alt="Account"
-                    />
+                    <div
+                        className="user-img"
+                        onClick={() => {
+                            history.push("/profile");
+                        }}
+                    >
+                        <img
+                            src="https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/account.webp"
+                            alt="Account"
+                        />
+                    </div>
+
+                    <Dropdown>
+                        <Dropdown.Toggle
+                            as={CustommobileToggle}
+                            id="dropdown-custom-components"
+                        >
+                            <span className="user-after-img">&#9660;</span>
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item
+                                onClick={() => {
+                                    history.push("/profile");
+                                }}
+                            >
+                                Profile
+                            </Dropdown.Item>
+                            <Dropdown.Item
+                                onClick={() => {
+                                    localStorage.clear();
+                                    authenticate();
+                                    history.push("/");
+                                }}
+                            >
+                                Logout
+                            </Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </div>
-
-                <Dropdown>
-                    <Dropdown.Toggle
-                        as={CustommobileToggle}
-                        id="dropdown-custom-components"
-                    >
-                        <span className="user-after-img">&#9660;</span>
-                    </Dropdown.Toggle>
-
-                    <Dropdown.Menu>
-                        <Dropdown.Item
+            ) : (
+                <div className="header-right">
+                    <span className="log-in-register-call-to-action">
+                        <span
                             onClick={() => {
-                                history.push("/profile");
+                                history.push("/login");
                             }}
                         >
-                            Profile
-                        </Dropdown.Item>
-                        <Dropdown.Item
+                            Log In /
+                        </span>
+                        <span
                             onClick={() => {
-                                localStorage.removeItem("token");
-                                authenticate();
+                                history.push("/register");
                             }}
                         >
-                            Logout
-                        </Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-            </div>
-        ) : (
-            <div className="header-right">
-                <span className="log-in-register-call-to-action">
-                    <span
-                        onClick={() => {
-                            history.push("/login");
-                        }}
-                    >
-                        Log In /
+                            {" "}
+                            Register
+                        </span>
                     </span>
-                    <span
-                        onClick={() => {
-                            history.push("/register");
-                        }}
-                    >
-                        {" "}
-                        Register
-                    </span>
-                </span>
-            </div>
-        )}
-    </div>
-);
+                </div>
+            )}
+        </div>
+    );
+};
 
 export default withRouter(Header);

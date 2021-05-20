@@ -75,6 +75,22 @@ function WhatWeDOCard(props) {
                                 >
                                     @shubhamrajput0369
                                 </a>
+                                <br />
+                                <a
+                                    href="https://github.com/cajoshi"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    @cajoshi
+                                </a>
+                                <br />
+                                <a
+                                    href="https://github.com/jrakshit749"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    @jrakshit749
+                                </a>
                             </Card.Text>
                         )}
                     </Card.Body>

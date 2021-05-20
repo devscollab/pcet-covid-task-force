@@ -2,6 +2,7 @@ export const askForHelpFormData = {
     "central-help-desk": {
         category: "Central Help Desk",
         initialState: {
+            loading: false,
             patientName: "",
             contactNumber: "",
             message: "",
@@ -32,6 +33,7 @@ export const askForHelpFormData = {
     "lab-testing": {
         category: "Lab Testing Facility",
         initialState: {
+            loading: false,
             patientName: "",
             contactNumber: "",
             age: "",
@@ -97,6 +99,7 @@ export const askForHelpFormData = {
     "hospital-admission": {
         category: "Hospital Admission",
         initialState: {
+            loading: false,
             patientName: "",
             contactNumber: "",
             age: "",
@@ -162,6 +165,7 @@ export const askForHelpFormData = {
     "o2-bed-and-ventilator": {
         category: "Oxygen Bed and Ventilator",
         initialState: {
+            loading: false,
             patientName: "",
             contactNumber: "",
             age: "",
@@ -234,6 +238,7 @@ export const askForHelpFormData = {
     medicines: {
         category: "Medicines",
         initialState: {
+            loading: false,
             patientName: "",
             contactNumber: "",
             age: "",
@@ -303,13 +308,14 @@ export const askForHelpFormData = {
             },
         ],
     },
-    "blood-and-plasma": {
-        category: "Blood and Plasma",
+    blood: {
+        category: "Blood",
         initialState: {
+            loading: false,
             patientName: "",
             contactNumber: "",
             age: "",
-            bloodOrPlasma: "Blood",
+            // bloodOrPlasma: "Blood",
             bloodGroup: "O+ve",
             healthCondition: "",
             requiredBy: "",
@@ -338,14 +344,13 @@ export const askForHelpFormData = {
                 placeholder: "Age",
                 required: true,
             },
-
-            {
-                type: "select",
-                name: "bloodOrPlasma",
-                placeholder: "Required",
-                options: ["Blood", "Plasma"],
-                required: true,
-            },
+            // {
+            //     type: "select",
+            //     name: "bloodOrPlasma",
+            //     placeholder: "Required",
+            //     options: ["Blood", "Plasma"],
+            //     required: true,
+            // },
             {
                 type: "select",
                 name: "bloodGroup",
@@ -404,6 +409,7 @@ export const askForHelpFormData = {
     "moral-support": {
         category: "Moral Support",
         initialState: {
+            loading: false,
             patientName: "",
             contactNumber: "",
             message: "",
@@ -434,6 +440,7 @@ export const askForHelpFormData = {
     vaccination: {
         category: "Vaccination",
         initialState: {
+            loading: false,
             name: "",
             contactNumber: "",
             message: "",
@@ -464,6 +471,7 @@ export const askForHelpFormData = {
     "doctors-for-suggestion": {
         category: "Vaccination",
         initialState: {
+            loading: false,
             patientName: "",
             contactNumber: "",
             message: "",
@@ -494,6 +502,7 @@ export const askForHelpFormData = {
     food: {
         category: "Food Availability for the needy",
         initialState: {
+            loading: false,
             name: "",
             contactNumber: "",
             area: "",
@@ -538,6 +547,7 @@ export const askForHelpFormData = {
     "post-covid-communication": {
         category: "Post Covid Communication",
         initialState: {
+            loading: false,
             patientName: "",
             contactNumber: "",
             bloodGroup: "O+ve",
@@ -592,6 +602,7 @@ export const askForHelpFormData = {
     "technical-support": {
         category: "Technical Support",
         initialState: {
+            loading: false,
             name: "",
             contactNumber: "",
             message: "",
