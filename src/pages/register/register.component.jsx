@@ -278,10 +278,12 @@ class RegisterPage extends React.Component {
                             value={this.state.gender}
                             onChange={this.handleChange}
                         >
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                            <option value="rns">Rather Not Say</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Rather Not Say">
+                                Rather Not Say
+                            </option>
                         </select>
                     </div>
                     <div
@@ -354,19 +356,19 @@ class RegisterPage extends React.Component {
                                     value={this.state.college}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="pccoe">
+                                    <option value="PCCoE">
                                         Pimpri Chinchwad College of Engineering,
                                         Nigdi, Pune
                                     </option>
-                                    <option value="pccoer">
+                                    <option value="PCCoER">
                                         Pimpri Chinchwad College of Engineering
                                         & Research, Ravet, Pune
                                     </option>
-                                    <option value="ncer">
+                                    <option value="NCER">
                                         Nutan College of Engineering and
                                         Research, Talegaon, Pune
                                     </option>
-                                    <option value="nmiet">
+                                    <option value="NMIET">
                                         Nutan Maharashtra Institute of
                                         Engineering and Technology, Talegaon,
                                         Pune
@@ -402,9 +404,13 @@ class RegisterPage extends React.Component {
                                     value={this.state.course}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="be">BE / B.Tech</option>
-                                    <option value="me">ME / M.Tech</option>
-                                    <option value="mca">MCA</option>
+                                    <option value="BE / B.Tech">
+                                        BE / B.Tech
+                                    </option>
+                                    <option value="ME / M.Tech">
+                                        ME / M.Tech
+                                    </option>
+                                    <option value="MCA">MCA</option>
                                 </select>
                                 <div
                                     className="field-legend"
@@ -427,11 +433,11 @@ class RegisterPage extends React.Component {
                                     value={this.state.year}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="1">1st</option>
-                                    <option value="2">2nd</option>
-                                    <option value="3">3rd</option>
-                                    <option value="4">4th</option>
-                                    <option value="other">Other</option>
+                                    <option value="1st">1st</option>
+                                    <option value="2nd">2nd</option>
+                                    <option value="3rd">3rd</option>
+                                    <option value="4th">4th</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                             <div
@@ -463,14 +469,18 @@ class RegisterPage extends React.Component {
                                     value={this.state.branch}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="comp">Computer</option>
-                                    <option value="it">IT</option>
-                                    <option value="entc">EnTC</option>
-                                    <option value="mech">Mechanical</option>
-                                    <option value="civil">Civil</option>
-                                    <option value="auto">Automobile</option>
-                                    <option value="mca">MCA</option>
-                                    <option value="other">Other</option>
+                                    <option value="Computer">Computer</option>
+                                    <option value="IT">IT</option>
+                                    <option value="EnTC">EnTC</option>
+                                    <option value="Mechanical">
+                                        Mechanical
+                                    </option>
+                                    <option value="Civil">Civil</option>
+                                    <option value="Automobile">
+                                        Automobile
+                                    </option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="Other">Other</option>
                                 </select>
                                 <CustomInput
                                     customStyle={{
@@ -507,14 +517,14 @@ class RegisterPage extends React.Component {
                                     value={this.state.bloodGroup}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="o+ve">O+ve</option>
-                                    <option value="a+ve">A+ve</option>
-                                    <option value="b+ve">B+ve</option>
-                                    <option value="ab+ve">AB+ve</option>
-                                    <option value="o-ve">O-ve</option>
-                                    <option value="a-ve">A-ve</option>
-                                    <option value="b-ve">B-ve</option>
-                                    <option value="ab-ve">AB-ve</option>
+                                    <option value="O+ve">O+ve</option>
+                                    <option value="A+ve">A+ve</option>
+                                    <option value="B+ve">B+ve</option>
+                                    <option value="AB+ve">AB+ve</option>
+                                    <option value="O-ve">O-ve</option>
+                                    <option value="A-ve">A-ve</option>
+                                    <option value="B-ve">B-ve</option>
+                                    <option value="AB-ve">AB-ve</option>
                                 </select>
                                 <CustomInput
                                     customStyle={{
@@ -1195,19 +1205,19 @@ class RegisterPage extends React.Component {
                                     value={this.state.college}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="pccoe">
+                                    <option value="PCCoE">
                                         Pimpri Chinchwad College of Engineering,
                                         Nigdi, Pune
                                     </option>
-                                    <option value="pccoer">
+                                    <option value="PCCoER">
                                         Pimpri Chinchwad College of Engineering
                                         & Research, Ravet, Pune
                                     </option>
-                                    <option value="ncer">
+                                    <option value="NCER">
                                         Nutan College of Engineering and
                                         Research, Talegaon, Pune
                                     </option>
-                                    <option value="nmiet">
+                                    <option value="NMIET">
                                         Nutan Maharashtra Institute of
                                         Engineering and Technology, Talegaon,
                                         Pune
@@ -1244,10 +1254,16 @@ class RegisterPage extends React.Component {
                                     value={this.state.course}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="be">BE / B.Tech</option>
-                                    <option value="me">ME / M.Tech</option>
-                                    <option value="mca">MCA</option>
-                                    <option value="na">Not Applicable</option>
+                                    <option value="BE / B.Tech">
+                                        BE / B.Tech
+                                    </option>
+                                    <option value="ME / M.Tech">
+                                        ME / M.Tech
+                                    </option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="Not Applicable">
+                                        Not Applicable
+                                    </option>
                                 </select>
                             </div>
                             <div
@@ -1279,15 +1295,21 @@ class RegisterPage extends React.Component {
                                     value={this.state.branch}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="comp">Computer</option>
-                                    <option value="it">IT</option>
-                                    <option value="entc">EnTC</option>
-                                    <option value="mech">Mechanical</option>
-                                    <option value="civil">Civil</option>
-                                    <option value="auto">Automobile</option>
-                                    <option value="mca">MCA</option>
-                                    <option value="other">Other</option>
-                                    <option value="na">Not Applicable</option>
+                                    <option value="Computer">Computer</option>
+                                    <option value="IT">IT</option>
+                                    <option value="EnTC">EnTC</option>
+                                    <option value="Mechanical">
+                                        Mechanical
+                                    </option>
+                                    <option value="Civil">Civil</option>
+                                    <option value="Automobile">
+                                        Automobile
+                                    </option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Not Applicable">
+                                        Not Applicable
+                                    </option>
                                 </select>
                             </div>
                             <div className="field-legend">Blood Group:</div>
@@ -1311,14 +1333,14 @@ class RegisterPage extends React.Component {
                                     value={this.state.bloodGroup}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="o+ve">O+ve</option>
-                                    <option value="a+ve">A+ve</option>
-                                    <option value="b+ve">B+ve</option>
-                                    <option value="ab+ve">AB+ve</option>
-                                    <option value="o-ve">O-ve</option>
-                                    <option value="a-ve">A-ve</option>
-                                    <option value="b-ve">B-ve</option>
-                                    <option value="ab-ve">AB-ve</option>
+                                    <option value="O+ve">O+ve</option>
+                                    <option value="A+ve">A+ve</option>
+                                    <option value="B+ve">B+ve</option>
+                                    <option value="AB+ve">AB+ve</option>
+                                    <option value="O-ve">O-ve</option>
+                                    <option value="A-ve">A-ve</option>
+                                    <option value="B-ve">B-ve</option>
+                                    <option value="AB-ve">AB-ve</option>
                                 </select>
                                 {/* <CustomInput
                                     customStyle={{
