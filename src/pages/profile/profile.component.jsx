@@ -273,7 +273,10 @@ class ProfilePage extends React.Component {
                                                         type="text"
                                                         name="bloodGroup"
                                                         placeholder="Enter Blood Group"
-                                                        value={this.state.bloodGroup.toUpperCase()}
+                                                        value={
+                                                            this.state
+                                                                .bloodGroup
+                                                        }
                                                         // onChange={this.handleChange}
                                                         disabled
                                                     />
@@ -327,7 +330,9 @@ class ProfilePage extends React.Component {
                                                         id="gender"
                                                         name="gender"
                                                         placeholder="Gender"
-                                                        value={this.state.gender.toUpperCase()}
+                                                        value={
+                                                            this.state.gender
+                                                        }
                                                         // onChange={this.handleChange}
                                                         disabled
                                                     />
@@ -429,7 +434,9 @@ class ProfilePage extends React.Component {
                                                         type="text"
                                                         name="college"
                                                         placeholder="Enter College"
-                                                        value={this.state.college.toUpperCase()}
+                                                        value={
+                                                            this.state.college
+                                                        }
                                                         // onChange={this.handleChange}
                                                         disabled
                                                     />
@@ -463,7 +470,9 @@ class ProfilePage extends React.Component {
                                                         type="text"
                                                         name="course"
                                                         placeholder="Enter Course"
-                                                        value={this.state.course.toUpperCase()}
+                                                        value={
+                                                            this.state.course
+                                                        }
                                                         // onChange={this.handleChange}
                                                         disabled
                                                     />
@@ -493,7 +502,9 @@ class ProfilePage extends React.Component {
                                                         type="text"
                                                         name="branch"
                                                         placeholder="Enter Branch"
-                                                        value={this.state.branch.toUpperCase()}
+                                                        value={
+                                                            this.state.branch
+                                                        }
                                                         // onChange={this.handleChange}
                                                         disabled
                                                     />
