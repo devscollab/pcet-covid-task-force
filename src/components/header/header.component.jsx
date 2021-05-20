@@ -76,6 +76,7 @@ const Header = ({ isAuthenticated, authenticate, history }) => (
                             onClick={() => {
                                 localStorage.removeItem("token");
                                 authenticate();
+                                history.push("/");
                             }}
                         >
                             Logout
@@ -120,6 +121,7 @@ const Header = ({ isAuthenticated, authenticate, history }) => (
                             onClick={() => {
                                 localStorage.removeItem("token");
                                 authenticate();
+                                history.push("/");
                             }}
                         >
                             Logout
