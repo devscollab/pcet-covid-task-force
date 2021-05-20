@@ -26,6 +26,7 @@ class App extends React.Component {
         this.state = {
             activatedItem: 1,
             isAuthenticated: false,
+            userData: null,
         };
     }
 
@@ -40,6 +41,17 @@ class App extends React.Component {
 
     componentDidMount() {
         this.authenticate();
+        if (this.state.isAuthenticated) {
+            let localUserData = {
+                firstName: localStorage.getItem("firstName"),
+                lastName: localStorage.getItem("lastName"),
+            };
+            if (localUserData) {
+                this.setState({ userData: localUserData });
+            }
+        } else {
+            this.setState({ userData: { firstName: "John", lastName: "Doe" } });
+        }
     }
 
     render() {
@@ -49,6 +61,7 @@ class App extends React.Component {
                     className="header"
                     isAuthenticated={this.state.isAuthenticated}
                     authenticate={this.authenticate.bind(this)}
+                    userData={this.state.userData}
                 />
                 <div className="main-container">
                     <Sidebar
