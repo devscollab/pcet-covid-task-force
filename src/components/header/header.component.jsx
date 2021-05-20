@@ -42,9 +42,7 @@ const CustommobileToggle = React.forwardRef(({ children, onClick }, ref) => (
     </a>
 ));
 
-const userName = "John Doe";
-
-const Header = ({ isAuthenticated, authenticate, history }) => (
+const Header = ({ isAuthenticated, authenticate, userData, history }) => (
     <div className="header">
         <div className="header-left" onClick={() => history.push("/")}>
             <Logo className="logo" />
@@ -61,7 +59,7 @@ const Header = ({ isAuthenticated, authenticate, history }) => (
                         id="dropdown-custom-components"
                         className="toggle-namebar"
                     >
-                        {userName}
+                        {userData.firstName} {userData.lastName}
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu>
@@ -74,7 +72,7 @@ const Header = ({ isAuthenticated, authenticate, history }) => (
                         </Dropdown.Item>
                         <Dropdown.Item
                             onClick={() => {
-                                localStorage.removeItem("token");
+                                localStorage.clear();
                                 authenticate();
                                 history.push("/");
                             }}
@@ -119,7 +117,7 @@ const Header = ({ isAuthenticated, authenticate, history }) => (
                         </Dropdown.Item>
                         <Dropdown.Item
                             onClick={() => {
-                                localStorage.removeItem("token");
+                                localStorage.clear();
                                 authenticate();
                                 history.push("/");
                             }}

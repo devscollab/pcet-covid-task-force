@@ -31,8 +31,29 @@ class LoginPage extends React.Component {
                 if (res.data.status === 200) {
                     // logged in successfully
                     localStorage.setItem("token", res.data.token);
-                    this.props.authenticate();
-                    this.props.history.push("/");
+                    Requests.getData(res.data.token)
+                        .then((userRes) => {
+                            if (userRes.data.status === 200) {
+                                localStorage.setItem(
+                                    "firstName",
+                                    userRes.data.userData.firstName
+                                );
+                                localStorage.setItem(
+                                    "lastName",
+                                    userRes.data.userData.lastName
+                                );
+                            } else {
+                                this.setState({
+                                    email: "",
+                                    password: "",
+                                    err: res.data.message,
+                                });
+                            }
+                        })
+                        .then(() => {
+                            this.props.authenticate();
+                            this.props.history.push("/");
+                        });
                 } else {
                     this.setState({
                         email: "",

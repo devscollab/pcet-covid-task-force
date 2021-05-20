@@ -109,8 +109,25 @@ class RegisterPage extends React.Component {
                             if (res.data.status === 200) {
                                 // logged in successfully
                                 localStorage.setItem("token", res.data.token);
-                                this.props.authenticate();
-                                this.props.history.push("/");
+                                Requests.getData(res.data.token)
+                                    .then((userRes) => {
+                                        if (userRes.data.status === 200) {
+                                            localStorage.setItem(
+                                                "userData",
+                                                userRes.data.userData
+                                            );
+                                        } else {
+                                            this.setState({
+                                                email: "",
+                                                password: "",
+                                                err: res.data.message,
+                                            });
+                                        }
+                                    })
+                                    .then(() => {
+                                        this.props.authenticate();
+                                        this.props.history.push("/");
+                                    });
                             } else {
                                 this.setState({ err: res.data.message });
                             }

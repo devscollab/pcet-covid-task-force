@@ -29,7 +29,11 @@ class ProfilePage extends React.Component {
             Requests.getData(token)
                 .then((res) => {
                     if (res.data.status === 200) {
-                        this.setState({ err: "", ...res.data.userData });
+                        this.setState({
+                            updatedMsg: "",
+                            err: "",
+                            ...res.data.userData,
+                        });
                     } else {
                         this.setState({
                             err: `There was some error retrieving the data. Try logging out if this error persists.`,
@@ -52,6 +56,7 @@ class ProfilePage extends React.Component {
             dateOfDose1,
             dateOfDose2,
             err,
+            updatedMsg,
             ...data
         } = this.state;
         startCovidDate = new Date(startCovidDate).getTime();
@@ -68,10 +73,16 @@ class ProfilePage extends React.Component {
                 dateOfDose2: dateOfDose2,
                 ...data,
             };
-            console.log(dataToBeSent);
+
             Requests.updateData(token, dataToBeSent)
                 .then((res) => {
                     if (res.data.status === 200) {
+                        this.setState({
+                            updatedMsg: `Profile Updated Successfully`,
+                        });
+                        document
+                            .getElementsByClassName("profile-page")[0]
+                            .scrollTo(0, 0);
                     } else {
                         this.setState({ err: res.data.message });
                     }
@@ -100,7 +111,7 @@ class ProfilePage extends React.Component {
             else value = false;
         }
 
-        this.setState({ [name]: value, err: "" });
+        this.setState({ [name]: value, err: "", updatedMsg: "" });
     }
 
     getDate(ms) {
@@ -161,6 +172,14 @@ class ProfilePage extends React.Component {
                                                     }}
                                                 >
                                                     {this.state.err}
+                                                </div>
+                                                <div
+                                                    className="updated-msg"
+                                                    style={{
+                                                        textAlign: "center",
+                                                    }}
+                                                >
+                                                    {this.state.updatedMsg}
                                                 </div>
                                             </div>
                                         </div>
