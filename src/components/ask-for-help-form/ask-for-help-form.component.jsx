@@ -1,10 +1,11 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 import CustomInput from "../custom-input/custom-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
-import requests from "../../helpers/requests";
+import Requests from "../../helpers/requests";
 
 import "./ask-for-help-form.styles.scss";
 
@@ -35,14 +36,23 @@ class AskForHelpForm extends React.Component {
                 requestType: this.props.requestType,
                 requestObject: requestObject,
             };
-            requests.addRequest(token, requestData).then((res) => {
-                if (res.data.status === 200) {
-                    this.props.history.push(
-                        `/registered-successfully/${res.data.requestId}`
-                    );
-                } else {
-                    this.setState({ err: res.data.message });
-                }
+            this.setState({ loading: true }, () => {
+                Requests.addRequest(token, requestData)
+                    .then((res) => {
+                        if (res.data.status === 200) {
+                            this.props.history.push(
+                                `/registered-successfully/${res.data.requestId}`
+                            );
+                        } else {
+                            this.setState({
+                                err: res.data.message,
+                                loading: false,
+                            });
+                        }
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                    });
             });
         } else {
             // not logged in
@@ -156,7 +166,11 @@ class AskForHelpForm extends React.Component {
                         alignSelf: "center",
                     }}
                 >
-                    Submit
+                    {this.state.loading ? (
+                        <Spinner animation="border" role="status"></Spinner>
+                    ) : (
+                        `Submit`
+                    )}
                 </CustomButton>
             </form>
         );

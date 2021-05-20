@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 import CustomInput from "../../components/custom-input/custom-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
@@ -40,10 +41,11 @@ const initialState = {
     dateOfDose1: "",
     dateOfDose2: "",
     caDonateblood: null,
-    caDonateplasma: null,
+    caDonateplasma: false,
     password: "",
     confirmPassword: "",
     err: "",
+    loading: false,
 };
 class RegisterPage extends React.Component {
     constructor(props) {
@@ -71,6 +73,7 @@ class RegisterPage extends React.Component {
             password,
             confirmPassword,
             err,
+            loading,
             ...formData
         } = this.state;
 
@@ -89,33 +92,64 @@ class RegisterPage extends React.Component {
         ) {
             if (password.length >= 8) {
                 if (password === confirmPassword) {
-                    Requests.register({
-                        dob,
-                        startCovidDate,
-                        endCovidDate,
-                        dateOfDose1,
-                        dateOfDose2,
-                        isStudent,
-                        haCovid,
-                        isRecovered,
-                        isVaccinated,
-                        isRegisteredoncowin,
-                        caDonateblood,
-                        caDonateplasma,
-                        password,
-                        ...formData,
-                    })
-                        .then((res) => {
-                            if (res.data.status === 200) {
-                                // logged in successfully
-                                localStorage.setItem("token", res.data.token);
-                                this.props.authenticate();
-                                this.props.history.push("/");
-                            } else {
-                                this.setState({ err: res.data.message });
-                            }
+                    this.setState({ loading: true }, () => {
+                        Requests.register({
+                            dob,
+                            startCovidDate,
+                            endCovidDate,
+                            dateOfDose1,
+                            dateOfDose2,
+                            isStudent,
+                            haCovid,
+                            isRecovered,
+                            isVaccinated,
+                            isRegisteredoncowin,
+                            caDonateblood,
+                            caDonateplasma,
+                            password,
+                            ...formData,
                         })
-                        .catch((err) => console.log(err));
+                            .then((res) => {
+                                if (res.data.status === 200) {
+                                    // logged in successfully
+                                    localStorage.setItem(
+                                        "token",
+                                        res.data.token
+                                    );
+                                    Requests.getData(res.data.token)
+                                        .then((userRes) => {
+                                            if (userRes.data.status === 200) {
+                                                localStorage.setItem(
+                                                    "firstName",
+                                                    userRes.data.userData
+                                                        .firstName
+                                                );
+                                                localStorage.setItem(
+                                                    "lastName",
+                                                    userRes.data.userData
+                                                        .lastName
+                                                );
+                                            } else {
+                                                this.setState({
+                                                    email: "",
+                                                    password: "",
+                                                    err: res.data.message,
+                                                });
+                                            }
+                                        })
+                                        .then(() => {
+                                            this.props.authenticate();
+                                            this.props.history.push("/");
+                                        });
+                                } else {
+                                    this.setState({ err: res.data.message });
+                                }
+                            })
+                            .then(() => {
+                                this.setState({ loading: false });
+                            })
+                            .catch((err) => console.log(err));
+                    });
                 } else {
                     this.setState({
                         err: `Password and Confirm Password does not match`,
@@ -1042,7 +1076,7 @@ class RegisterPage extends React.Component {
                                     </div>
                                 </fieldset>
                             </div>
-                            <div
+                            {/* <div
                                 className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
@@ -1086,7 +1120,7 @@ class RegisterPage extends React.Component {
                                         </label>
                                     </div>
                                 </fieldset>
-                            </div>
+                            </div> */}
                             <div
                                 className="custrow"
                                 style={{
@@ -1846,7 +1880,7 @@ class RegisterPage extends React.Component {
                                     </div>
                                 </fieldset>
                             </div>
-                            <div
+                            {/* <div
                                 className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
@@ -1890,7 +1924,7 @@ class RegisterPage extends React.Component {
                                         </label>
                                     </div>
                                 </fieldset>
-                            </div>
+                            </div> */}
                             <div
                                 className="custrow"
                                 style={{
@@ -1941,7 +1975,11 @@ class RegisterPage extends React.Component {
                         type="submit"
                         customStyle={{ width: "300px", marginBottom: "0.25em" }}
                     >
-                        Submit
+                        {this.state.loading ? (
+                            <Spinner animation="border" role="status"></Spinner>
+                        ) : (
+                            `Submit`
+                        )}
                     </CustomButton>
                 </form>
             </div>
