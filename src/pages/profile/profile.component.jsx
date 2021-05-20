@@ -47,7 +47,7 @@ class ProfilePage extends React.Component {
                 <Container>
 <Row>
 <Col className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-<Card className="h-100">
+<Card className="h-20">
 	<Card.Body>
 		<div className="account-settings">
 			<div className="user-profile">
