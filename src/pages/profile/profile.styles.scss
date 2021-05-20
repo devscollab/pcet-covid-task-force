@@ -80,4 +80,13 @@ body {
 .err-message {
     color: red;
     text-align: end;
+    margin: 1em;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
