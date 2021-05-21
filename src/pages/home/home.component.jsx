@@ -6,7 +6,7 @@ import { ReactComponent as VolunteerColorLogo } from "../../assets/volunteer-col
 import { ReactComponent as WhatWeDoColorLogo } from "../../assets/what-we-do-color.svg";
 import { ReactComponent as ContactUsColorLogo } from "../../assets/contact-us-color.svg";
 
-import Banner from "../../assets/banner.webp";
+// import Banner from "../../assets/banner.webp";
 
 import "./home.styles.scss";
 
@@ -17,7 +17,10 @@ const HomePage = ({ history }) => (
         </div>
         <div className="home-page-img-txt-capsule">
             <div className="home-page-img-txt-capsule-img">
-                <img src={Banner} alt="Home Page" />
+                <img
+                    src="https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/banner.webp"
+                    alt="Home Page"
+                />
             </div>
             <div className="home-page-img-txt-capsule-description">
                 Hope you and your family members are safe in this pandemic
