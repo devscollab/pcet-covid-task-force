@@ -23,6 +23,13 @@ class LoginPage extends React.Component {
         };
     }
 
+    componentDidMount() {
+        let token = localStorage.getItem("token");
+        if (token) {
+            this.props.history.push("/");
+        }
+    }
+
     handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -118,7 +125,14 @@ class LoginPage extends React.Component {
                     </CustomButton>
                     <div className="forgot-password">
                         Forgot your password? Click{" "}
-                        <span className="click-here">here</span>
+                        <span
+                            className="click-here"
+                            onClick={() => {
+                                this.props.history.push("/forgot-password");
+                            }}
+                        >
+                            here
+                        </span>
                     </div>
                     <div
                         className="register-link"

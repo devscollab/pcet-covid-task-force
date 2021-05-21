@@ -57,6 +57,7 @@ class ProfilePage extends React.Component {
             dateOfDose2,
             err,
             updatedMsg,
+            aadharNumber,
             ...data
         } = this.state;
         startCovidDate = new Date(startCovidDate).getTime();

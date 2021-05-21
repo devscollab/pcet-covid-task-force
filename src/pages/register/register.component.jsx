@@ -54,6 +54,13 @@ class RegisterPage extends React.Component {
         this.state = initialState;
     }
 
+    componentDidMount() {
+        let token = localStorage.getItem("token");
+        if (token) {
+            this.props.history.push("/");
+        }
+    }
+
     handleSubmit = async (event) => {
         event.preventDefault();
 
