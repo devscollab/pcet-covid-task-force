@@ -16,14 +16,14 @@ const initialState = {
     dob: "",
     age: "",
     contactNumber: "",
-    gender: "rns",
+    gender: "Rather Not Say",
     isStudent: null,
-    college: "pccoe",
-    course: "be",
-    year: "1",
-    branch: "comp",
+    college: "PCCoE",
+    course: "BE / B.Tech",
+    year: "1st",
+    branch: "Computer",
     div: "",
-    bloodGroup: "o+ve",
+    bloodGroup: "O+ve",
     rollNumber: "",
     aadharNumber: "",
     currentAddress: "",
@@ -139,6 +139,7 @@ class RegisterPage extends React.Component {
                                         })
                                         .then(() => {
                                             this.props.authenticate();
+                                            this.props.updateUserName();
                                             this.props.history.push("/");
                                         });
                                 } else {
