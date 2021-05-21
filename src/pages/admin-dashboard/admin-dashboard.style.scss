@@ -2,10 +2,8 @@ $dmin: 767px;
 .mainCol{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 50vh;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 40px;
     
     @media screen and (max-width: $dmin) {
         flex-direction: row;
@@ -15,8 +13,10 @@ $dmin: 767px;
     }
 }
 .datacol{
-    overflow-x:auto;
     text-align : center;
+    ::-webkit-scrollbar{
+        height: 10px;
+    }
 }
 
 .active{

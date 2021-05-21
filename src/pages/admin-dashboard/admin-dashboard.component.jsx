@@ -3,15 +3,64 @@ import { Col, Row, Table } from "react-bootstrap";
 
 import "./admin-dashboard.style.scss";
 
-import { leftItems, Data } from "./data";
+import { leftItems, Data1 } from "./data";
+
 
 class AdminDashboard extends React.Component {
     constructor() {
         super();
         this.state = {
-            activeItem: leftItems[0],
+            activeItem: "",
+            activeData : [],
+            activeHeaders : []
         };
     }
+
+    load_data(member,HelpData){
+        const data = HelpData[member];
+        const headers = [];
+
+        // If will be removed when API will be used
+        if(!data[0].requestObject["UserID"])
+            headers.push("UserID")
+
+        for(var k in data[0].requestObject) headers.push(k);
+        //headers.pop(1);
+        
+        data.forEach(element => {
+            //delete element.requestObject['loading']
+            element.requestObject = {
+                UserID : element.userId,
+                ...element.requestObject
+            }; 
+        });
+
+        this.setState({
+            activeItem: leftItems[0],
+            activeData : data,
+            activeHeaders : headers
+        })
+    }
+
+    componentDidMount(){
+        
+        // Get request to bring data
+        const data = Data1;
+
+        this.load_data("Blood", data)
+    }
+
+    onChangeData(member){
+
+        // Get request to bring data
+        const data = Data1; 
+        this.load_data(member,data);
+        this.setState({
+            activeItem: member,
+        });
+
+    }
+    
 
     render() {
         return (
@@ -19,14 +68,11 @@ class AdminDashboard extends React.Component {
                 <Row>
                     <Col xs={12} md={2} className="mainCol">
                         {leftItems.map((member, index) => (
-                            <div key={index}>
                                 <div
+                                    key={index}
+                                    style={{marginBottom:'30px'}}
                                     type="button"
-                                    onClick={() => {
-                                        this.setState({
-                                            activeItem: member,
-                                        });
-                                    }}
+                                    onClick={()=>this.onChangeData(member)}
                                     className={`${
                                         this.state.activeItem === member
                                             ? "activated active"
@@ -35,28 +81,33 @@ class AdminDashboard extends React.Component {
                                 >
                                     {member}
                                 </div>
-                            </div>
                         ))}
                     </Col>
                     <Col xs={12} md={10} className="datacol">
                         <h5>{this.state.activeItem}</h5>
-                        <Table striped bordered hover>
+                        <Table striped bordered hover responsive>
                             <thead>
                                 <tr>
-                                    {Data[this.state.activeItem].Headers.map(
+                                    {this.state.activeHeaders.map(
                                         (member, index) => (
-                                            <th>{member}</th>
+                                            <th  key={index}>{member.toUpperCase()}</th>
                                         )
                                     )}
                                 </tr>
                             </thead>
-                            <tbody>
-                                {Data[this.state.activeItem].Data.map(
+                            <tbody>                            
+                                {
+                                    this.state.activeData.map(
                                     (member, index) => (
-                                        <tr>
-                                            {member.map((member, index) => (
-                                                <td>{member}</td>
-                                            ))}
+                                        <tr  key={index}>
+                                            {
+                                                Object.keys(member.requestObject).map((key, i) => (
+                                                    <td key={key}>
+                                                        {member.requestObject[key]}
+                                                    </td>
+                                                  )
+                                                )
+                                            }
                                         </tr>
                                     )
                                 )}
