@@ -12,6 +12,8 @@ import AskForHelpPage from "./pages/ask-for-help/ask-for-help.component";
 import RegisteredSuccessfully from "./pages/registered-successfully/registered-successfully.component";
 import AdminDashboard from "./pages/admin-dashboard/admin-dashboard.component";
 import ProfilePage from "./pages/profile/profile.component";
+import ForgotPasswordPage from "./pages/forgot-password/forgot-password.component";
+import ResetPasswordPage from "./pages/reset-password/reset-password.component";
 
 import Header from "./components/header/header.component";
 import Sidebar from "./components/sidebar/sidebar.component";
@@ -86,6 +88,16 @@ class App extends React.Component {
                             <RegisterPage
                                 authenticate={this.authenticate.bind(this)}
                                 updateUserName={this.updateUserName.bind(this)}
+                            />
+                        </Route>
+                        <Route path="/forgot-password">
+                            <ForgotPasswordPage
+                                authenticate={this.authenticate.bind(this)}
+                            />
+                        </Route>
+                        <Route path="/reset-password/:hash">
+                            <ResetPasswordPage
+                                authenticate={this.authenticate.bind(this)}
                             />
                         </Route>
                         <Route

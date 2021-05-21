@@ -65,7 +65,6 @@ class Requests {
         return axios.get(this.route + "/get-requests", config);
     }
 
-
     addVolunteer(token, volunteerObject) {
         let config = {
             method: "post",
@@ -74,7 +73,11 @@ class Requests {
                 Authorization: "Token " + token,
             },
         };
-        return axios.post(this.route + "/add-volunteer", volunteerObject, config);
+        return axios.post(
+            this.route + "/add-volunteer",
+            volunteerObject,
+            config
+        );
     }
 
     getVolunteers(token) {
@@ -87,7 +90,31 @@ class Requests {
         };
         return axios.get(this.route + "/get-volunteers", config);
     }
+
+    forgotPassword(email, aadharNumber) {
+        let config = {
+            method: "post",
+            url: this.route + "/reset",
+        };
+        return axios.post(
+            this.route + "/reset",
+            { email, aadharNumber },
+            config
+        );
+    }
+
+    resetPassword(hash, newPassword) {
+        let config = {
+            method: "post",
+            url: this.route + "/generate-new",
+        };
+        return axios.post(
+            this.route + "/generate-new",
+            { hash, newPassword },
+            config
+        );
+    }
 }
 
-export default new Requests();
+export default new Requests("http://959d24456fff.ngrok.io");
 // module.exports = new Requests("http://localhost:3000")
