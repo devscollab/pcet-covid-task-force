@@ -17,7 +17,7 @@ $small: 900px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start;
+        align-items: center!important;
 
         @media screen and (max-width: $small) {
             align-items: center;
