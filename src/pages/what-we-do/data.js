@@ -1,26 +1,26 @@
 export const whatWeDoData = [
     {
-        title: "About PCCOE",
-        desc: "Contact the central help desk if you want to know how we can help you during this pandemic",
-        img: "https://drive.google.com/uc?id=1OjiyVadEf8OAZiE7eB6sLBYHU8JBeduu",
+        title: "PCET's Covid Task Force",
+        desc: "We are a committee of students trying to help society through this pandemic situation because we believe 'Helping one person might not change the world, but it could change the world for one person!'",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/logo-wo-border.webp",
         button: "Ask for help",
     },
     {
         title: "Our Mission",
-        desc: "If you need verified information of the pathology labs and which tests are available in which areas, we will try to provide all the information that you'll need to contact the correct lab",
-        img: "https://drive.google.com/uc?id=1PzWg1Y7_1FB0IJkGQnTE7x61PwTBjXqc",
+        desc: "To help our students, alumni, and their immediate family members, we have created PCET STUDENTS COVID TASK FORCE, which will try to help the concerned people. We try to provide help in areas like Lab Testing, Hospital admission, Oxygen bed, Ventilator, Plasma, Medicines, Moral Support, Arranging Isolation Beds, Medical suggestions from Doctors, etc.",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/mission.webp",
         button: "Ask for help",
     },
     {
-        title: "Our Mission",
-        desc: "Hospital bed availability is one of the concerning issues right now and we can help you get verified information about the availability",
-        img: "https://drive.google.com/uc?id=1yroVrDrBMmZUaQFKG5IwPwlkAaBOlrsk",
+        title: "PCET- Pimpri Chinchwad Education trust",
+        desc: "PCET's mission is to help society through quality education  by creating, communicating and applying knowledge, art and academic values. PCET provides specialised courses like Engineering, MBA and MCA by professional and passionate instructors.",
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/pcet.png",
         button: "Ask for help",
     },
     {
-        title: "Our Mission",
-        desc: "Critical cases might need Oxygen beds and ventilator arrangements and we can help you get correct information and contact details for the same",
-        img: "https://drive.google.com/uc?id=1euis01Dp391o5SbnYrRUZ8XxO1QU_CKO",
+        title: "PCET Covid Task Force Web Platform",
+        desc: `This web platform is built using React, MongoDB and hosted on Azure App Services.`,
+        img: "https://raw.githubusercontent.com/devscollab/pcet-covid-task-force/main/src/assets/developers.webp",
         button: "Ask for help",
-    }
+    },
 ];

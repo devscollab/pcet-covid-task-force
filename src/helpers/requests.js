@@ -32,6 +32,17 @@ class Requests {
         return axios.get(this.route + "/get-user", config);
     }
 
+    updateData(token, data) {
+        let config = {
+            method: "post",
+            url: this.route + "/update-user",
+            headers: {
+                Authorization: "Token " + token,
+            },
+        };
+        return axios.post(this.route + "/update-user", data, config);
+    }
+
     addRequest(token, requestObject) {
         let config = {
             method: "post",
@@ -52,6 +63,56 @@ class Requests {
             },
         };
         return axios.get(this.route + "/get-requests", config);
+    }
+
+    addVolunteer(token, volunteerObject) {
+        let config = {
+            method: "post",
+            url: this.route + "/add-volunteer",
+            headers: {
+                Authorization: "Token " + token,
+            },
+        };
+        return axios.post(
+            this.route + "/add-volunteer",
+            volunteerObject,
+            config
+        );
+    }
+
+    getVolunteers(token) {
+        let config = {
+            method: "get",
+            url: this.route + "/get-volunteers",
+            headers: {
+                Authorization: "Bearer " + token,
+            },
+        };
+        return axios.get(this.route + "/get-volunteers", config);
+    }
+
+    forgotPassword(email, aadharNumber) {
+        let config = {
+            method: "post",
+            url: this.route + "/reset",
+        };
+        return axios.post(
+            this.route + "/reset",
+            { email, aadharNumber },
+            config
+        );
+    }
+
+    resetPassword(hash, newPassword) {
+        let config = {
+            method: "post",
+            url: this.route + "/generate-new",
+        };
+        return axios.post(
+            this.route + "/generate-new",
+            { hash, newPassword },
+            config
+        );
     }
 }
 

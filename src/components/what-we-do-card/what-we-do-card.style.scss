@@ -1,50 +1,47 @@
-.whatwedocard{
-    margin: 20px 10px 10px 10px ;
-    height: 90% ;
+.whatwedocard {
+    margin: 20px 10px 10px 10px;
+    height: 90%;
     border-radius: 12px;
 
-    &-button{
-        background-color: #018361; 
+    &-button {
+        background-color: #018361;
         bottom: 5%;
-        position: absolute 
+        position: absolute;
     }
-    &-imgcol{
+    &-imgcol {
         display: flex;
         justify-content: center;
     }
-    &-row{
+    &-row {
         height: 100%;
         border: 2px solid #00000011;
-        margin : 1px;
+        margin: 1px;
         border-radius: 12px;
     }
-    &-cardb{
+    &-cardb {
         padding-bottom: 40px;
     }
-
 }
-.whatimg{
-    width: 100%;
+.whatimg {
+    width: 200px;
     height: 200px;
 }
 
 @media screen and (max-width: 900px) {
-    .whatwedocard{
-        margin: 0 ;
-        height: 95% ;
-    
-        &-button{
+    .whatwedocard {
+        margin: 0;
+        height: 95%;
+
+        &-button {
             bottom: auto;
-            position: relative 
+            position: relative;
         }
-        &-imgcol{
+        &-imgcol {
             margin: 0;
         }
-    
     }
 
-    
-    .cardCol{
+    .cardCol {
         padding: 0;
     }
 }

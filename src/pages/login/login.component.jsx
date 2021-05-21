@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 import { ReactComponent as LoginImage } from "../../assets/login-image.svg";
 
@@ -18,30 +19,64 @@ class LoginPage extends React.Component {
             email: "",
             password: "",
             err: "",
+            loading: false,
         };
+    }
+
+    componentDidMount() {
+        let token = localStorage.getItem("token");
+        if (token) {
+            this.props.history.push("/");
+        }
     }
 
     handleSubmit = async (event) => {
         event.preventDefault();
 
         const { email, password } = this.state;
-
-        Requests.login(email, password)
-            .then((res) => {
-                if (res.data.status === 200) {
-                    // logged in successfully
-                    localStorage.setItem("token", res.data.token);
-                    this.props.authenticate();
-                    this.props.history.push("/");
-                } else {
-                    this.setState({
-                        email: "",
-                        password: "",
-                        err: res.data.message,
-                    });
-                }
-            })
-            .catch((err) => console.log(err));
+        this.setState({ loading: true }, () => {
+            Requests.login(email, password)
+                .then((res) => {
+                    if (res.data.status === 200) {
+                        // logged in successfully
+                        localStorage.setItem("token", res.data.token);
+                        Requests.getData(res.data.token)
+                            .then((userRes) => {
+                                if (userRes.data.status === 200) {
+                                    localStorage.setItem(
+                                        "firstName",
+                                        userRes.data.userData.firstName
+                                    );
+                                    localStorage.setItem(
+                                        "lastName",
+                                        userRes.data.userData.lastName
+                                    );
+                                } else {
+                                    this.setState({
+                                        email: "",
+                                        password: "",
+                                        err: res.data.message,
+                                    });
+                                }
+                            })
+                            .then(() => {
+                                this.props.authenticate();
+                                this.props.updateUserName();
+                                this.props.history.push("/");
+                            });
+                    } else {
+                        this.setState({
+                            email: "",
+                            password: "",
+                            err: res.data.message,
+                        });
+                    }
+                })
+                .then(() => {
+                    this.setState({ loading: false });
+                })
+                .catch((err) => console.log(err));
+        });
     };
 
     handleChange = (event) => {
@@ -82,11 +117,22 @@ class LoginPage extends React.Component {
                         type="submit"
                         customStyle={{ width: "300px", marginBottom: "0.25em" }}
                     >
-                        Submit
+                        {this.state.loading ? (
+                            <Spinner animation="border" role="status"></Spinner>
+                        ) : (
+                            `Submit`
+                        )}
                     </CustomButton>
                     <div className="forgot-password">
                         Forgot your password? Click{" "}
-                        <span className="click-here">here</span>
+                        <span
+                            className="click-here"
+                            onClick={() => {
+                                this.props.history.push("/forgot-password");
+                            }}
+                        >
+                            here
+                        </span>
                     </div>
                     <div
                         className="register-link"

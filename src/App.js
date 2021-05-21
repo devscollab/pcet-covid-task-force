@@ -11,6 +11,9 @@ import RegisterPage from "./pages/register/register.component";
 import AskForHelpPage from "./pages/ask-for-help/ask-for-help.component";
 import RegisteredSuccessfully from "./pages/registered-successfully/registered-successfully.component";
 import AdminDashboard from "./pages/admin-dashboard/admin-dashboard.component";
+import ProfilePage from "./pages/profile/profile.component";
+import ForgotPasswordPage from "./pages/forgot-password/forgot-password.component";
+import ResetPasswordPage from "./pages/reset-password/reset-password.component";
 
 import Header from "./components/header/header.component";
 import Sidebar from "./components/sidebar/sidebar.component";
@@ -25,6 +28,7 @@ class App extends React.Component {
         this.state = {
             activatedItem: 1,
             isAuthenticated: false,
+            userData: null,
         };
     }
 
@@ -37,8 +41,21 @@ class App extends React.Component {
         }
     }
 
+    updateUserName() {
+        let localUserData = {
+            firstName: localStorage.getItem("firstName"),
+            lastName: localStorage.getItem("lastName"),
+        };
+        if (localUserData.firstName) {
+            this.setState({ userData: localUserData });
+        } else {
+            this.setState({ userData: { firstName: "John", lastName: "Doe" } });
+        }
+    }
+
     componentDidMount() {
         this.authenticate();
+        this.updateUserName();
     }
 
     render() {
@@ -48,6 +65,8 @@ class App extends React.Component {
                     className="header"
                     isAuthenticated={this.state.isAuthenticated}
                     authenticate={this.authenticate.bind(this)}
+                    updateUserName={this.updateUserName.bind(this)}
+                    userData={this.state.userData}
                 />
                 <div className="main-container">
                     <Sidebar
@@ -62,10 +81,22 @@ class App extends React.Component {
                         <Route path="/login">
                             <LoginPage
                                 authenticate={this.authenticate.bind(this)}
+                                updateUserName={this.updateUserName.bind(this)}
                             />
                         </Route>
                         <Route path="/register">
                             <RegisterPage
+                                authenticate={this.authenticate.bind(this)}
+                                updateUserName={this.updateUserName.bind(this)}
+                            />
+                        </Route>
+                        <Route path="/forgot-password">
+                            <ForgotPasswordPage
+                                authenticate={this.authenticate.bind(this)}
+                            />
+                        </Route>
+                        <Route path="/reset-password/:hash">
+                            <ResetPasswordPage
                                 authenticate={this.authenticate.bind(this)}
                             />
                         </Route>
@@ -74,13 +105,14 @@ class App extends React.Component {
                             component={AskForHelpPage}
                         />
                         <Route
-                            path="/registered-sucessfully/:id"
+                            path="/registered-successfully/:id"
                             component={RegisteredSuccessfully}
                         />
                         <Route
                             path="/admin-dashboard"
                             component={AdminDashboard}
                         />
+                        <Route path="/profile" component={ProfilePage} />
                         <Route path="/" component={HomePage} />
                     </Switch>
                 </div>

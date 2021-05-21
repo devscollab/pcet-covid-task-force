@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 
 import CustomInput from "../../components/custom-input/custom-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
@@ -15,14 +16,14 @@ const initialState = {
     dob: "",
     age: "",
     contactNumber: "",
-    gender: "rns",
+    gender: "Rather Not Say",
     isStudent: null,
-    college: "pccoe",
-    course: "be",
-    year: "1",
-    branch: "comp",
+    college: "PCCoE",
+    course: "BE / B.Tech",
+    year: "1st",
+    branch: "Computer",
     div: "",
-    bloodGroup: "o+ve",
+    bloodGroup: "O+ve",
     rollNumber: "",
     aadharNumber: "",
     currentAddress: "",
@@ -40,16 +41,24 @@ const initialState = {
     dateOfDose1: "",
     dateOfDose2: "",
     caDonateblood: null,
-    caDonateplasma: null,
+    caDonateplasma: false,
     password: "",
     confirmPassword: "",
     err: "",
+    loading: false,
 };
 class RegisterPage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = initialState;
+    }
+
+    componentDidMount() {
+        let token = localStorage.getItem("token");
+        if (token) {
+            this.props.history.push("/");
+        }
     }
 
     handleSubmit = async (event) => {
@@ -71,6 +80,7 @@ class RegisterPage extends React.Component {
             password,
             confirmPassword,
             err,
+            loading,
             ...formData
         } = this.state;
 
@@ -89,33 +99,65 @@ class RegisterPage extends React.Component {
         ) {
             if (password.length >= 8) {
                 if (password === confirmPassword) {
-                    Requests.register({
-                        dob,
-                        startCovidDate,
-                        endCovidDate,
-                        dateOfDose1,
-                        dateOfDose2,
-                        isStudent,
-                        haCovid,
-                        isRecovered,
-                        isVaccinated,
-                        isRegisteredoncowin,
-                        caDonateblood,
-                        caDonateplasma,
-                        password,
-                        ...formData,
-                    })
-                        .then((res) => {
-                            if (res.data.status === 200) {
-                                // logged in successfully
-                                localStorage.setItem("token", res.data.token);
-                                this.props.authenticate();
-                                this.props.history.push("/");
-                            } else {
-                                this.setState({ err: res.data.message });
-                            }
+                    this.setState({ loading: true }, () => {
+                        Requests.register({
+                            dob,
+                            startCovidDate,
+                            endCovidDate,
+                            dateOfDose1,
+                            dateOfDose2,
+                            isStudent,
+                            haCovid,
+                            isRecovered,
+                            isVaccinated,
+                            isRegisteredoncowin,
+                            caDonateblood,
+                            caDonateplasma,
+                            password,
+                            ...formData,
                         })
-                        .catch((err) => console.log(err));
+                            .then((res) => {
+                                if (res.data.status === 200) {
+                                    // logged in successfully
+                                    localStorage.setItem(
+                                        "token",
+                                        res.data.token
+                                    );
+                                    Requests.getData(res.data.token)
+                                        .then((userRes) => {
+                                            if (userRes.data.status === 200) {
+                                                localStorage.setItem(
+                                                    "firstName",
+                                                    userRes.data.userData
+                                                        .firstName
+                                                );
+                                                localStorage.setItem(
+                                                    "lastName",
+                                                    userRes.data.userData
+                                                        .lastName
+                                                );
+                                            } else {
+                                                this.setState({
+                                                    email: "",
+                                                    password: "",
+                                                    err: res.data.message,
+                                                });
+                                            }
+                                        })
+                                        .then(() => {
+                                            this.props.authenticate();
+                                            this.props.updateUserName();
+                                            this.props.history.push("/");
+                                        });
+                                } else {
+                                    this.setState({ err: res.data.message });
+                                }
+                            })
+                            .then(() => {
+                                this.setState({ loading: false });
+                            })
+                            .catch((err) => console.log(err));
+                    });
                 } else {
                     this.setState({
                         err: `Password and Confirm Password does not match`,
@@ -190,14 +232,14 @@ class RegisterPage extends React.Component {
                             required
                         />
                     </div>
-                    <div className="field-legend">Date of Birth:</div>
+                    {/* <div className="field-legend">Date of Birth:</div> */}
                     <CustomInput
                         customStyle={{
                             width: "300px",
                         }}
-                        type="date"
+                        type="text"
                         name="dob"
-                        placeholder="dob"
+                        placeholder="Date of Birth"
                         max="2021-01-01"
                         value={this.state.dob}
                         handleChange={this.handleChange}
@@ -244,10 +286,12 @@ class RegisterPage extends React.Component {
                             value={this.state.gender}
                             onChange={this.handleChange}
                         >
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                            <option value="rns">Rather Not Say</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="Rather Not Say">
+                                Rather Not Say
+                            </option>
                         </select>
                     </div>
                     <div
@@ -320,19 +364,19 @@ class RegisterPage extends React.Component {
                                     value={this.state.college}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="pccoe">
+                                    <option value="PCCoE">
                                         Pimpri Chinchwad College of Engineering,
                                         Nigdi, Pune
                                     </option>
-                                    <option value="pccoer">
+                                    <option value="PCCoER">
                                         Pimpri Chinchwad College of Engineering
                                         & Research, Ravet, Pune
                                     </option>
-                                    <option value="ncer">
+                                    <option value="NCER">
                                         Nutan College of Engineering and
                                         Research, Talegaon, Pune
                                     </option>
-                                    <option value="nmiet">
+                                    <option value="NMIET">
                                         Nutan Maharashtra Institute of
                                         Engineering and Technology, Talegaon,
                                         Pune
@@ -368,9 +412,13 @@ class RegisterPage extends React.Component {
                                     value={this.state.course}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="be">BE / B.Tech</option>
-                                    <option value="me">ME / M.Tech</option>
-                                    <option value="mca">MCA</option>
+                                    <option value="BE / B.Tech">
+                                        BE / B.Tech
+                                    </option>
+                                    <option value="ME / M.Tech">
+                                        ME / M.Tech
+                                    </option>
+                                    <option value="MCA">MCA</option>
                                 </select>
                                 <div
                                     className="field-legend"
@@ -393,11 +441,11 @@ class RegisterPage extends React.Component {
                                     value={this.state.year}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="1">1st</option>
-                                    <option value="2">2nd</option>
-                                    <option value="3">3rd</option>
-                                    <option value="4">4th</option>
-                                    <option value="other">Other</option>
+                                    <option value="1st">1st</option>
+                                    <option value="2nd">2nd</option>
+                                    <option value="3rd">3rd</option>
+                                    <option value="4th">4th</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                             <div
@@ -429,14 +477,18 @@ class RegisterPage extends React.Component {
                                     value={this.state.branch}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="comp">Computer</option>
-                                    <option value="it">IT</option>
-                                    <option value="entc">EnTC</option>
-                                    <option value="mech">Mechanical</option>
-                                    <option value="civil">Civil</option>
-                                    <option value="auto">Automobile</option>
-                                    <option value="mca">MCA</option>
-                                    <option value="other">Other</option>
+                                    <option value="Computer">Computer</option>
+                                    <option value="IT">IT</option>
+                                    <option value="EnTC">EnTC</option>
+                                    <option value="Mechanical">
+                                        Mechanical
+                                    </option>
+                                    <option value="Civil">Civil</option>
+                                    <option value="Automobile">
+                                        Automobile
+                                    </option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="Other">Other</option>
                                 </select>
                                 <CustomInput
                                     customStyle={{
@@ -473,14 +525,14 @@ class RegisterPage extends React.Component {
                                     value={this.state.bloodGroup}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="o+ve">O+ve</option>
-                                    <option value="a+ve">A+ve</option>
-                                    <option value="b+ve">B+ve</option>
-                                    <option value="ab+ve">AB+ve</option>
-                                    <option value="o-ve">O-ve</option>
-                                    <option value="a-ve">A-ve</option>
-                                    <option value="b-ve">B-ve</option>
-                                    <option value="ab-ve">AB-ve</option>
+                                    <option value="O+ve">O+ve</option>
+                                    <option value="A+ve">A+ve</option>
+                                    <option value="B+ve">B+ve</option>
+                                    <option value="AB+ve">AB+ve</option>
+                                    <option value="O-ve">O-ve</option>
+                                    <option value="A-ve">A-ve</option>
+                                    <option value="B-ve">B-ve</option>
+                                    <option value="AB-ve">AB-ve</option>
                                 </select>
                                 <CustomInput
                                     customStyle={{
@@ -720,9 +772,9 @@ class RegisterPage extends React.Component {
                             </div>
                             {this.state.haCovid ? (
                                 <div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Covid Start Date:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
@@ -735,8 +787,9 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="startCovidDate"
+                                            placeholder="When was it detected?"
                                             value={this.state.startCovidDate}
                                             handleChange={this.handleChange}
                                             required
@@ -793,9 +846,9 @@ class RegisterPage extends React.Component {
                                     </div>
                                     {this.state.isRecovered ? (
                                         <div>
-                                            <div className="field-legend">
+                                            {/* <div className="field-legend">
                                                 Covid End Date:
-                                            </div>
+                                            </div> */}
                                             <div
                                                 className="custrow"
                                                 style={{
@@ -808,8 +861,9 @@ class RegisterPage extends React.Component {
                                                         width: "300px",
                                                         margin: "0 1em",
                                                     }}
-                                                    type="date"
+                                                    type="text"
                                                     name="endCovidDate"
+                                                    placeholder="When did your quarantine end?"
                                                     value={
                                                         this.state.endCovidDate
                                                     }
@@ -903,9 +957,9 @@ class RegisterPage extends React.Component {
                                             </option>
                                         </select>
                                     </div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Date of Dose 1:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
@@ -918,21 +972,22 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="dateOfDose1"
+                                            placeholder="Date of Dose 1?"
                                             value={this.state.dateOfDose1}
                                             handleChange={this.handleChange}
                                             required
                                         />
                                     </div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Date of Dose 2:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
-                                            margin: "0em 0",
+                                            margin: "1em 0",
                                         }}
                                     >
                                         <CustomInput
@@ -940,8 +995,9 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="dateOfDose2"
+                                            placeholder="Date of Dose 2?"
                                             value={this.state.dateOfDose2}
                                             handleChange={this.handleChange}
                                         />
@@ -1038,7 +1094,7 @@ class RegisterPage extends React.Component {
                                     </div>
                                 </fieldset>
                             </div>
-                            <div
+                            {/* <div
                                 className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
@@ -1082,7 +1138,7 @@ class RegisterPage extends React.Component {
                                         </label>
                                     </div>
                                 </fieldset>
-                            </div>
+                            </div> */}
                             <div
                                 className="custrow"
                                 style={{
@@ -1157,19 +1213,19 @@ class RegisterPage extends React.Component {
                                     value={this.state.college}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="pccoe">
+                                    <option value="PCCoE">
                                         Pimpri Chinchwad College of Engineering,
                                         Nigdi, Pune
                                     </option>
-                                    <option value="pccoer">
+                                    <option value="PCCoER">
                                         Pimpri Chinchwad College of Engineering
                                         & Research, Ravet, Pune
                                     </option>
-                                    <option value="ncer">
+                                    <option value="NCER">
                                         Nutan College of Engineering and
                                         Research, Talegaon, Pune
                                     </option>
-                                    <option value="nmiet">
+                                    <option value="NMIET">
                                         Nutan Maharashtra Institute of
                                         Engineering and Technology, Talegaon,
                                         Pune
@@ -1206,10 +1262,16 @@ class RegisterPage extends React.Component {
                                     value={this.state.course}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="be">BE / B.Tech</option>
-                                    <option value="me">ME / M.Tech</option>
-                                    <option value="mca">MCA</option>
-                                    <option value="na">Not Applicable</option>
+                                    <option value="BE / B.Tech">
+                                        BE / B.Tech
+                                    </option>
+                                    <option value="ME / M.Tech">
+                                        ME / M.Tech
+                                    </option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="Not Applicable">
+                                        Not Applicable
+                                    </option>
                                 </select>
                             </div>
                             <div
@@ -1241,15 +1303,21 @@ class RegisterPage extends React.Component {
                                     value={this.state.branch}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="comp">Computer</option>
-                                    <option value="it">IT</option>
-                                    <option value="entc">EnTC</option>
-                                    <option value="mech">Mechanical</option>
-                                    <option value="civil">Civil</option>
-                                    <option value="auto">Automobile</option>
-                                    <option value="mca">MCA</option>
-                                    <option value="other">Other</option>
-                                    <option value="na">Not Applicable</option>
+                                    <option value="Computer">Computer</option>
+                                    <option value="IT">IT</option>
+                                    <option value="EnTC">EnTC</option>
+                                    <option value="Mechanical">
+                                        Mechanical
+                                    </option>
+                                    <option value="Civil">Civil</option>
+                                    <option value="Automobile">
+                                        Automobile
+                                    </option>
+                                    <option value="MCA">MCA</option>
+                                    <option value="Other">Other</option>
+                                    <option value="Not Applicable">
+                                        Not Applicable
+                                    </option>
                                 </select>
                             </div>
                             <div className="field-legend">Blood Group:</div>
@@ -1273,14 +1341,14 @@ class RegisterPage extends React.Component {
                                     value={this.state.bloodGroup}
                                     onChange={this.handleChange}
                                 >
-                                    <option value="o+ve">O+ve</option>
-                                    <option value="a+ve">A+ve</option>
-                                    <option value="b+ve">B+ve</option>
-                                    <option value="ab+ve">AB+ve</option>
-                                    <option value="o-ve">O-ve</option>
-                                    <option value="a-ve">A-ve</option>
-                                    <option value="b-ve">B-ve</option>
-                                    <option value="ab-ve">AB-ve</option>
+                                    <option value="O+ve">O+ve</option>
+                                    <option value="A+ve">A+ve</option>
+                                    <option value="B+ve">B+ve</option>
+                                    <option value="AB+ve">AB+ve</option>
+                                    <option value="O-ve">O-ve</option>
+                                    <option value="A-ve">A-ve</option>
+                                    <option value="B-ve">B-ve</option>
+                                    <option value="AB-ve">AB-ve</option>
                                 </select>
                                 {/* <CustomInput
                                     customStyle={{
@@ -1520,9 +1588,9 @@ class RegisterPage extends React.Component {
                             </div>
                             {this.state.haCovid ? (
                                 <div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Covid Start Date:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
@@ -1535,8 +1603,9 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="startCovidDate"
+                                            placeholder="When was it detected?"
                                             value={this.state.startCovidDate}
                                             handleChange={this.handleChange}
                                             required
@@ -1593,9 +1662,9 @@ class RegisterPage extends React.Component {
                                     </div>
                                     {this.state.isRecovered ? (
                                         <div>
-                                            <div className="field-legend">
+                                            {/* <div className="field-legend">
                                                 Covid End Date:
-                                            </div>
+                                            </div> */}
                                             <div
                                                 className="custrow"
                                                 style={{
@@ -1608,8 +1677,9 @@ class RegisterPage extends React.Component {
                                                         width: "300px",
                                                         margin: "0 1em",
                                                     }}
-                                                    type="date"
+                                                    type="text"
                                                     name="endCovidDate"
+                                                    placeholder="When did your quarantine end?"
                                                     value={
                                                         this.state.endCovidDate
                                                     }
@@ -1703,9 +1773,9 @@ class RegisterPage extends React.Component {
                                             </option>
                                         </select>
                                     </div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Date of Dose 1:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
@@ -1718,21 +1788,22 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="dateOfDose1"
+                                            placeholder="Date of Dose 1?"
                                             value={this.state.dateOfDose1}
                                             handleChange={this.handleChange}
                                             required
                                         />
                                     </div>
-                                    <div className="field-legend">
+                                    {/* <div className="field-legend">
                                         Date of Dose 2:
-                                    </div>
+                                    </div> */}
                                     <div
                                         className="custrow"
                                         style={{
                                             alignSelf: "flex-start",
-                                            margin: "0em 0",
+                                            margin: "1em 0",
                                         }}
                                     >
                                         <CustomInput
@@ -1740,8 +1811,9 @@ class RegisterPage extends React.Component {
                                                 width: "300px",
                                                 margin: "0 1em",
                                             }}
-                                            type="date"
+                                            type="text"
                                             name="dateOfDose2"
+                                            placeholder="Date of Dose 2?"
                                             value={this.state.dateOfDose2}
                                             handleChange={this.handleChange}
                                         />
@@ -1838,7 +1910,7 @@ class RegisterPage extends React.Component {
                                     </div>
                                 </fieldset>
                             </div>
-                            <div
+                            {/* <div
                                 className="custrow"
                                 style={{
                                     alignSelf: "flex-start",
@@ -1882,7 +1954,7 @@ class RegisterPage extends React.Component {
                                         </label>
                                     </div>
                                 </fieldset>
-                            </div>
+                            </div> */}
                             <div
                                 className="custrow"
                                 style={{
@@ -1933,7 +2005,11 @@ class RegisterPage extends React.Component {
                         type="submit"
                         customStyle={{ width: "300px", marginBottom: "0.25em" }}
                     >
-                        Submit
+                        {this.state.loading ? (
+                            <Spinner animation="border" role="status"></Spinner>
+                        ) : (
+                            `Submit`
+                        )}
                     </CustomButton>
                 </form>
             </div>

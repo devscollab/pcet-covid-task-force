@@ -14,3 +14,26 @@
         margin: 0 1em;
     }
 }
+
+.vol-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1em;
+
+    &-title {
+        font-size: 1.2em;
+        margin: 1em;
+    }
+}
+
+.error-message {
+    color: red;
+    max-width: 300px;
+}
+
+.success-message {
+    color: green;
+    max-width: 300px;
+}
