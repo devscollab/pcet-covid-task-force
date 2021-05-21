@@ -139,6 +139,7 @@ class RegisterPage extends React.Component {
                                         })
                                         .then(() => {
                                             this.props.authenticate();
+                                            this.props.updateUserName();
                                             this.props.history.push("/");
                                         });
                                 } else {
