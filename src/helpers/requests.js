@@ -116,5 +116,5 @@ class Requests {
     }
 }
 
-export default new Requests("http://959d24456fff.ngrok.io");
+export default new Requests();
 // module.exports = new Requests("http://localhost:3000")

@@ -1,3 +1,91 @@
+export const orgData = [
+    {
+        requestType: "blood",
+        requestObject: {
+            loading: false,
+            patientName: "Test User",
+            contactNumber: "9999999999",
+            age: "21",
+            bloodGroup: "O+ve",
+            healthCondition: "COVID +ve",
+            requiredBy: 1621900800000,
+            area: "Ravet",
+            city: "Pune",
+            hospital: "The Ravet Hospital, Ravet",
+            message: "Need blood soon (Test message)",
+        },
+        userId: "60a68b69ac9b5c0032b24795",
+    },
+    {
+        requestType: "blood",
+        requestObject: {
+            loading: false,
+            patientName: "Test User",
+            contactNumber: "9999999999",
+            age: "21",
+            bloodGroup: "O+ve",
+            healthCondition: "COVID +ve",
+            requiredBy: 1621900800000,
+            area: "Ravet",
+            city: "Pune",
+            hospital: "The Ravet Hospital, Ravet",
+            message: "Need blood soon (Test message)",
+        },
+        userId: "60a68b69ac9b5c0032b24795",
+    },
+    {
+        requestType: "blood",
+        requestObject: {
+            loading: false,
+            patientName: "Test User",
+            contactNumber: "9999999999",
+            age: "21",
+            bloodGroup: "O+ve",
+            healthCondition: "COVID +ve",
+            requiredBy: 1621900800000,
+            area: "Ravet",
+            city: "Pune",
+            hospital: "The Ravet Hospital, Ravet",
+            message: "Need blood soon (Test message)",
+        },
+        userId: "60a68b69ac9b5c0032b24795",
+    },
+    {
+        requestType: "blood",
+        requestObject: {
+            loading: false,
+            patientName: "Test User",
+            contactNumber: "9999999999",
+            age: "21",
+            bloodGroup: "O+ve",
+            healthCondition: "COVID +ve",
+            requiredBy: 1621900800000,
+            area: "Ravet",
+            city: "Pune",
+            hospital: "The Ravet Hospital, Ravet",
+            message: "Need blood soon (Test message)",
+        },
+        userId: "60a68b69ac9b5c0032b24795",
+    },
+    {
+        requestType: "blood",
+        requestObject: {
+            loading: false,
+            patientName: "Test User",
+            contactNumber: "9999999999",
+            age: "21",
+            bloodGroup: "O+ve",
+            healthCondition: "COVID +ve",
+            requiredBy: 1621900800000,
+            area: "Ravet",
+            city: "Pune",
+            hospital: "The Ravet Hospital, Ravet",
+            message: "Need blood soon (Test message)",
+        },
+        userId: "60a68b69ac9b5c0032b24795",
+    },
+];
+
 export const leftItems = [
     "Blood",
     "Plasma",
@@ -6,85 +94,84 @@ export const leftItems = [
     "Volunteers",
 ];
 export const Data = {
-    Blood : {
-       Headers : [1,2,3,4,5],
-       Data : [
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5'],
-           ['D1', 'D2', 'D3', 'D4', 'D5']
-       ]
-   },
-    Plasma : {
-       Headers : [1,2,3,4,5],
-       Data : [
-           ['H1', 'H2', 'H3', 'H4', 'H5'],
-           ['H1', 'H2', 'H3', 'H4', 'H5'],
-           ['H1', 'H2', 'H3', 'H4', 'H5']
-       ]
-   },
-    Oxygen : {
-       Headers : [1,2,3,4,5],
-       Data : [
-           ['O1', 'O2', 'O3', 'O4', 'O5'],
-           ['O1', 'O2', 'O3', 'O4', 'O5'],
-           ['O1', 'O2', 'O3', 'O4', 'O5']
-       ]
-   },
-    Hospitals : {
-       Headers : [1,2,3,4,5],
-       Data : [
-           ['P1', 'P2', 'P3', 'P4', 'P5'],
-           ['P1', 'P2', 'P3', 'P4', 'P5'],
-           ['P1', 'P2', 'P3', 'P4', 'P5']
-       ]
-   },
-    Volunteers : {
-       Headers : [1,2,3,4,5],
-       Data : [
-           ['V1', 'V2', 'V3', 'V4', 'V5'],
-           ['V1', 'V2', 'V3', 'V4', 'V5'],
-           ['V1', 'V2', 'V3', 'V4', 'V9']
-       ]
-   }
-
-}
+    Blood: {
+        Headers: [1, 2, 3, 4, 5],
+        Data: [
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+            ["D1", "D2", "D3", "D4", "D5"],
+        ],
+    },
+    Plasma: {
+        Headers: [1, 2, 3, 4, 5],
+        Data: [
+            ["H1", "H2", "H3", "H4", "H5"],
+            ["H1", "H2", "H3", "H4", "H5"],
+            ["H1", "H2", "H3", "H4", "H5"],
+        ],
+    },
+    Oxygen: {
+        Headers: [1, 2, 3, 4, 5],
+        Data: [
+            ["O1", "O2", "O3", "O4", "O5"],
+            ["O1", "O2", "O3", "O4", "O5"],
+            ["O1", "O2", "O3", "O4", "O5"],
+        ],
+    },
+    Hospitals: {
+        Headers: [1, 2, 3, 4, 5],
+        Data: [
+            ["P1", "P2", "P3", "P4", "P5"],
+            ["P1", "P2", "P3", "P4", "P5"],
+            ["P1", "P2", "P3", "P4", "P5"],
+        ],
+    },
+    Volunteers: {
+        Headers: [1, 2, 3, 4, 5],
+        Data: [
+            ["V1", "V2", "V3", "V4", "V5"],
+            ["V1", "V2", "V3", "V4", "V5"],
+            ["V1", "V2", "V3", "V4", "V9"],
+        ],
+    },
+};
