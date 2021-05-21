@@ -85,6 +85,7 @@ class App extends React.Component {
                         <Route path="/register">
                             <RegisterPage
                                 authenticate={this.authenticate.bind(this)}
+                                updateUserName={this.updateUserName.bind(this)}
                             />
                         </Route>
                         <Route
