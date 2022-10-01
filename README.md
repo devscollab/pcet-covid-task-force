@@ -1,5 +1,7 @@
 # PCET COVID TASK FORCE
 
+## This website is NOT under live use right now. Thank you all for your contributions.
+
 We are a committee of students trying to help society through this pandemic situation because we believe 'Helping one person might not change the world, but it could change the world for one person!
 
 # Our Mission
